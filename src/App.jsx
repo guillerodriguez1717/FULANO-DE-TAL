@@ -27,13 +27,24 @@ function NewspaperTicker() {
   return <section className="newspaper-ticker" aria-label="Novedades de Fulano de Tal"><div className="ticker-track">{loop.map((notice, i) => <div className="ticker-notice" key={i}><span>EDICIÓN ESPECIAL</span><strong>{notice}</strong><b>✦</b></div>)}</div></section>
 }
 
+const shopWorlds = [
+  ['Deco, hogar y bazar','Objetos útiles, lindos y fáciles de sumar a la casa.'],
+  ['Eventos y repostería','Descartables, cotillón, harinas, frutos secos, dulce de leche e insumos para cumpleaños.'],
+  ['Textil y empresas','Remeras para eventos, maratones, empresas y trabajos textiles especiales.'],
+  ['Personalizados','Tablas, regalos y pedidos especiales hechos para cada ocasión.'],
+]
+
 function Home({ navigate, openProduct }) {
   return <main>
-    <section className="hero"><div className="hero-copy"><div className="hero-brand"><span className="eyebrow">FULANO DE TAL</span><span className="hero-descriptor">Muebles y algo más</span></div><h1>Encontrá eso que <em>le falta a tu casa.</em></h1><p>Muebles, deco, bazar y pedidos especiales. Te ayudamos a encontrar una buena opción y coordinamos cada detalle con vos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
+    <section className="hero"><div className="hero-copy"><div className="hero-brand"><span className="eyebrow">FULANO DE TAL</span><span className="hero-descriptor">Muebles y algo más</span></div><h1>Encontrá eso que <em>te viene haciendo falta.</em></h1><p>Muebles, deco, bazar y pedidos especiales. Te ayudamos a encontrar una buena opción y coordinamos cada detalle con vos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
 
     <NewspaperTicker />
 
     <section className="section category-section"><SectionTitle eyebrow="Muebles por ambiente" title="¿Para qué rincón estás buscando?" text="Empezá por el ambiente. Después vemos juntos medidas, opciones, tiempos y entrega."/><div className="category-grid">{categories.map(c => <button className="category-card" key={c.name} onClick={() => navigate('catalog', c.name)}><img src={c.image} alt=""/><span><small>{c.subtitle}</small><strong>{c.name}</strong><ArrowRight/></span></button>)}</div></section>
+
+    <section className="section worlds-section"><SectionTitle eyebrow="Muebles y algo más" title="Todo lo que puede aparecer por lo de Fulano" text="No queremos mezclar todo porque sí. Cada rubro tendrá su espacio, su forma de compra y sus condiciones claras."/><div className="world-grid">{shopWorlds.map(([title,text],i)=><article className="world-card" key={title}><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p><button className="text-button" onClick={() => navigate('contact')}>Consultar <ArrowRight size={16}/></button></article>)}</div></section>
+
+    <section className="coming-soon"><div className="coming-copy"><span className="eyebrow">PRÓXIMAMENTE</span><h2>Fulano agarró la bici y salió a investigar.</h2><p>Anda buscando nuevos productos, proveedores y cosas útiles para sumar a la tienda. Cuando vuelva con algo bueno, te lo contamos acá.</p><button className="secondary" onClick={() => navigate('contact')}>Tengo algo para recomendarle</button></div><div className="coming-art"><div className="bike-mark" aria-hidden="true">🚲</div><Fulano scene="search"/></div></section>
 
     <section className="section products-section"><SectionTitle eyebrow="Los más mirados" title="Favoritos de la casa" action={<button className="text-button" onClick={() => navigate('catalog')}>Ver todos los muebles →</button>}/><div className="product-grid">{products.filter(p => p.featured).map(p => <ProductCard key={p.id} product={p} onOpen={openProduct}/>)}</div></section>
 
