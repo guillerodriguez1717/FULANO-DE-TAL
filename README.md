@@ -33,14 +33,6 @@ npm run preview
 
 El número para las consultas se configura en la constante `WHATSAPP_NUMBER` de `src/App.jsx`, con código de país y solo dígitos.
 
-### Publicación en GitHub Pages
-
-El workflow `.github/workflows/deploy-pages.yml` valida, compila y publica automáticamente `dist/` con `SITE_BASE=/FULANO-DE-TAL/` cada vez que se envían cambios a `main`. También se puede ejecutar manualmente desde la pestaña **Actions**.
-
-En el repositorio de GitHub, ir a **Settings → Pages → Build and deployment** y elegir **GitHub Actions** en **Source**. No hay que seleccionar una carpeta ni una rama de publicación: el workflow entrega directamente el artefacto generado a Pages.
-
-La publicación quedará disponible en `https://guillerodriguez1717.github.io/FULANO-DE-TAL/`. El workflow instala su compilador dentro del runner de GitHub, por lo que publicar no requiere instalar herramientas manualmente en la computadora local.
-
 ### Reemplazar las ilustraciones de Fulano
 
 `src/components/Fulano.jsx` centraliza el placeholder ilustrado y recibe una propiedad `scene` (`measure`, `phone`, `search`, `list`, `box` o `hello`). Para incorporar las ilustraciones definitivas sin cambiar las páginas:
