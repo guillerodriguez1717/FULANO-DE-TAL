@@ -161,3 +161,18 @@ header{height:92px;padding:8px 5vw}
 .world-body{min-height:230px;padding:20px}
 .world-body h3{font-size:1.75rem;margin-top:18px}
 }
+
+
+/* Ilustración definitiva del bloque Próximamente */
+.coming-art{background:#efe2c8;align-items:stretch}
+.fulano-bike-image{width:100%;height:100%;object-fit:cover;display:block}
+.coming-note{display:block;max-width:560px;margin-top:14px;color:rgba(41,39,34,.72);font-size:.82rem;line-height:1.45}
+@media(max-width:900px){
+.coming-art{min-height:430px}
+.fulano-bike-image{object-position:center center}
+}
+@media(max-width:600px){
+.coming-art{min-height:300px}
+.fulano-bike-image{object-position:36% center}
+.coming-note{margin-top:12px}
+}
