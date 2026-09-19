@@ -666,3 +666,56 @@ font-size:clamp(2.8rem,12vw,4.1rem)
 @media(prefers-reduced-motion:reduce){
 .hero-mini-ticker-track{animation:none}
 }
+
+
+/* Ajuste de equilibrio: una sola cinta en movimiento y hero sin mensajes duplicados */
+@media(max-width:600px){
+.hero.hero-integrated{
+background:#f7f2e8
+}
+.hero-integrated .hero-image{
+height:42vh;
+min-height:330px;
+max-height:430px
+}
+.hero-mini-ticker{
+padding:9px 0;
+background:#e8d6b1
+}
+.hero-mini-ticker-item{
+font-size:.74rem;
+padding:0 14px;
+letter-spacing:.045em
+}
+.hero-integrated .hero-copy{
+padding:26px 5vw 34px;
+background:#f7f2e8
+}
+.hero-brand-lockup{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+gap:8px;
+margin:0 0 16px
+}
+.hero-brand-lockup img{
+width:min(68vw,280px);
+max-height:120px
+}
+.hero-brand-lockup strong{
+font:500 .98rem 'Fraunces',serif;
+color:var(--olive)
+}
+.hero-mobile-kicker{display:none!important}
+.hero-integrated h1{
+margin-top:4px;
+font-size:clamp(2.7rem,11.5vw,4rem);
+line-height:.96
+}
+.hero-integrated .hero-copy>p{
+margin-bottom:20px
+}
+}
+
+/* En desktop también evitamos duplicar la cinta editorial justo debajo del hero. */
+.hero + .newspaper-ticker{display:none}
