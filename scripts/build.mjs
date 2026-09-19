@@ -10,6 +10,10 @@ execFileSync('tsc', ['-p', 'tsconfig.json'], { stdio: 'inherit' })
 mkdirSync('dist/assets', { recursive: true }); mkdirSync('dist/vendor', { recursive: true })
 cpSync('.build', 'dist/assets', { recursive: true }); cpSync('vendor', 'dist/vendor', { recursive: true }); cpSync('src/styles.css', 'dist/styles.css')
 if (existsSync('public')) cpSync('public', 'dist', { recursive: true })
+// Copy approved brand images stored at the repository root into the deploy output.
+for (const brandImage of ['fulano-de-tal-logo-horizontal.png', 'fulano-de-tal-sello-redondo.png']) {
+  if (existsSync(brandImage)) cpSync(brandImage, join('dist', brandImage))
+}
 const javascriptFiles = readdirSync('dist/assets', { recursive: true })
   .filter(file => typeof file === 'string' && file.endsWith('.js'))
 
