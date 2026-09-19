@@ -50,3 +50,23 @@ header{height:92px;padding:8px 5vw}
 .newspaper-section{padding-top:55px;padding-bottom:60px}
 .help-feature{padding-top:55px;padding-bottom:55px}
 }
+
+/* Cinta continua de avisos estilo diario */
+.newspaper-ticker{overflow:hidden;background:#ead9b8;border-top:3px double rgba(41,39,34,.62);border-bottom:3px double rgba(41,39,34,.62);padding:11px 0;position:relative}
+.ticker-track{display:flex;width:max-content;animation:fulano-news 34s linear infinite}
+.ticker-notice{display:flex;align-items:center;gap:14px;white-space:nowrap;padding:0 24px;border-right:1px solid rgba(41,39,34,.32);font-family:'Fraunces',serif}
+.ticker-notice span{font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;color:var(--terracotta)}
+.ticker-notice strong{font-size:1.08rem;font-weight:600}
+.ticker-notice b{font-size:.8rem;color:var(--olive)}
+.newspaper-ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes fulano-news{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.category-section{background:var(--ivory)}
+.category-section .category-card{border:1px solid var(--line);box-shadow:none;filter:none}
+.category-section .category-card:after{background:linear-gradient(transparent,rgba(20,20,17,.72))}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+@media(max-width:600px){
+.newspaper-ticker{padding:10px 0}
+.ticker-track{animation-duration:28s}
+.ticker-notice{gap:10px;padding:0 18px}
+.ticker-notice strong{font-size:.98rem}
+}
