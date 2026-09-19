@@ -189,3 +189,19 @@ header{height:92px;padding:8px 5vw}
 .coming-note{font-size:.78rem;line-height:1.4}
 .fulano-bike-image{object-position:38% center}
 }
+
+
+/* Presentación de marca más fuerte al inicio en mobile */
+.hero-mobile-brand{display:none}
+@media(max-width:600px){
+header{height:84px;padding-inline:4vw}
+header .logo-image{height:58px;max-width:138px}
+.hero-copy{padding-top:26px}
+.hero-mobile-brand{display:flex;align-items:center;gap:14px;padding:14px 0 18px;margin-bottom:4px;border-bottom:1px solid rgba(41,39,34,.14)}
+.hero-mobile-brand img{width:118px;height:auto;display:block;flex:0 0 auto}
+.hero-mobile-brand div{display:flex;flex-direction:column;gap:3px}
+.hero-mobile-brand strong{font:600 1.18rem 'Fraunces';letter-spacing:.01em}
+.hero-mobile-brand span{font-size:.82rem;color:var(--muted);line-height:1.25}
+.hero-brand{margin-top:14px}
+.hero h1{margin-top:14px}
+}
