@@ -9,7 +9,8 @@ for (const expected of ['/FULANO-DE-TAL/assets/main.js', '/FULANO-DE-TAL/styles.
   if (!html.includes(expected)) throw new Error(`Missing GitHub Pages path: ${expected}`)
 }
 for (const match of html.matchAll(/["']\/FULANO-DE-TAL\/([^"']+)["']/g)) {
-  const outputPath = join('dist', match[1])
+  const cleanPath = match[1].split('?')[0]
+  const outputPath = join('dist', cleanPath)
   if (!existsSync(outputPath)) throw new Error(`HTML references missing output: ${outputPath}`)
 }
 
