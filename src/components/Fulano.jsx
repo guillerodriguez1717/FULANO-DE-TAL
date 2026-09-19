@@ -1,4 +1,9 @@
+import { brandAssets } from '../data/brandAssets'
+
 export default function Fulano({ scene = 'hello', className = '' }) {
+  const illustration = brandAssets.fulanoScenes[scene] || brandAssets.fulanoMain
+  if (illustration) return <img className={`fulano-art ${className}`} src={illustration} alt={`Fulano dando una mano: ${scene}`} />
+
   const extras = {
     measure: <><path d="M20 142c35-25 68-24 102-4"/><path className="tape" d="M26 122c16 18 40-17 62 4s38-10 51 8"/><rect x="17" y="112" width="24" height="19" rx="5"/></>,
     phone: <><rect x="112" y="110" width="25" height="37" rx="5"/><path d="M119 117h11M124 137h2"/><path d="M62 72l-15 5M91 72l16 5"/></>,

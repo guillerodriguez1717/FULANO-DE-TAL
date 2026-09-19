@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import ProductCard from './components/ProductCard'
 import FulanoHelp from './components/FulanoHelp'
 import Fulano from './components/Fulano'
+import { BrandSeal } from './components/Logo'
 import { categories, formatPrice, products } from './data/products'
 
 const WHATSAPP_NUMBER = '' // Configurar el número real con código de país, solo dígitos.
@@ -14,7 +15,7 @@ function SectionTitle({ eyebrow, title, text, action }) { return <div className=
 
 function Home({ navigate, openProduct }) {
   return <main>
-    <section className="hero"><div className="hero-copy"><span className="eyebrow">FULANO DE TAL · MUEBLES Y MÁS</span><h1>Encontrá ese mueble que le falta a tu casa.</h1><p>Elegí tranquilo. Mirá medidas, compará opciones y preguntanos todo lo que necesites. Del resto, nos ocupamos juntos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('catalog')}>Ver muebles <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('how')}>Cómo comprar</button></div><div className="hero-note"><span>Atención de personas reales</span><span>Compra acompañada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-stamp">Elegidos<br/><strong>para vivirlos</strong></div></div></section>
+    <section className="hero"><div className="hero-copy"><div className="hero-brand"><span className="eyebrow">FULANO DE TAL</span><span className="hero-descriptor">Muebles y más</span></div><h1>Encontrá ese mueble que le falta a tu casa.</h1><p>Elegí tranquilo. Mirá medidas, compará opciones y preguntanos todo lo que necesites. Del resto, nos ocupamos juntos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('catalog')}>Ver muebles <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('how')}>Cómo comprar</button></div><div className="hero-note"><span>Atención de personas reales</span><span>Compra acompañada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
 
     <section className="section"><SectionTitle eyebrow="Un lugar para cada cosa" title="Empezá por acá" text="Muebles que hacen más lindo —y más fácil— el día a día."/><div className="category-grid">{categories.map(c => <button className="category-card" key={c.name} onClick={() => navigate('catalog', c.name)}><img src={c.image} alt=""/><span><small>{c.subtitle}</small><strong>{c.name}</strong><ArrowRight/></span></button>)}</div></section>
 
