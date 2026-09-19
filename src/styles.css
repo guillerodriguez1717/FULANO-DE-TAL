@@ -270,3 +270,112 @@ header .logo-image{display:none}
 .hero-note{text-align:left;border-top:1px solid rgba(41,39,34,.12);padding-top:18px}
 .hero-image:after{content:'Muebles · Deco · Bazar · Pedidos especiales'}
 }
+
+
+/* Opción A: hero mobile integrado + header con acciones entendibles */
+.hero-brand-lockup{display:flex;align-items:center;gap:22px}
+.hero-brand-lockup img{width:min(330px,36vw);height:auto;display:block}
+.hero-brand-lockup>div{display:flex;flex-direction:column;gap:8px}
+.hero-brand-lockup strong{font:500 1.2rem 'Fraunces',serif;color:var(--olive)}
+.mobile-brand-button{display:none}
+
+@media(max-width:600px){
+header{height:70px;gap:10px}
+header .logo{display:none}
+.mobile-brand-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border:0;
+background:transparent;
+padding:0 4px;
+font:600 1rem 'Fraunces',serif;
+color:var(--charcoal);
+letter-spacing:.02em
+}
+.header-actions{gap:6px}
+.search-button,.menu-button{
+width:auto!important;
+height:40px!important;
+display:inline-flex!important;
+align-items:center;
+gap:5px;
+padding:0 9px!important;
+border:1px solid rgba(41,39,34,.12)!important;
+border-radius:999px!important;
+background:rgba(255,253,248,.72)!important
+}
+.search-button span,.menu-button span{display:inline;font-size:.72rem;font-weight:700}
+.whatsapp{display:none}
+
+.hero.hero-integrated{
+display:grid;
+grid-template-columns:1fr;
+background:linear-gradient(180deg,#efe2c8 0%,#f7f2e8 54%,#fffdf8 100%);
+border-top:1px solid rgba(41,39,34,.08)
+}
+.hero-integrated .hero-copy{
+padding:26px 5vw 34px;
+text-align:left;
+background:transparent
+}
+.hero-brand-lockup{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+padding:0;
+margin:0 0 22px;
+background:none;
+border:0;
+box-shadow:none
+}
+.hero-brand-lockup img{
+width:min(86vw,360px);
+max-height:170px;
+object-fit:contain;
+object-position:left center
+}
+.hero-brand-lockup>div{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:10px;
+flex-wrap:wrap
+}
+.hero-brand-lockup strong{
+font:500 1rem 'Fraunces',serif;
+color:var(--olive)
+}
+.hero-mobile-kicker{
+display:inline-flex!important;
+padding:6px 10px;
+border:1px solid rgba(41,39,34,.18);
+background:rgba(255,253,248,.55);
+font-size:.7rem!important;
+text-transform:uppercase;
+letter-spacing:.12em;
+color:var(--terracotta)!important;
+font-weight:700
+}
+.hero-integrated h1{
+font-size:clamp(3.1rem,13vw,4.5rem);
+line-height:.94;
+margin:0 0 18px
+}
+.hero-integrated .hero-image{
+margin:0 5vw 28px;
+border-radius:24px;
+overflow:hidden;
+min-height:330px;
+box-shadow:0 20px 50px rgba(41,39,34,.12)
+}
+.hero-integrated .hero-image img{height:100%;object-fit:cover}
+.hero-integrated .hero-brand-seal{transform:scale(.9);transform-origin:bottom right}
+.hero-integrated .hero-note{
+margin-top:18px;
+padding-top:16px;
+border-top:1px solid rgba(41,39,34,.14)
+}
+.hero-mobile-brand,.hero-brand{display:none!important}
+}
