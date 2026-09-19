@@ -176,3 +176,16 @@ header{height:92px;padding:8px 5vw}
 .fulano-bike-image{object-position:36% center}
 .coming-note{margin-top:12px}
 }
+
+
+/* Ajuste fino mobile del bloque Próximamente */
+@media(max-width:600px){
+.coming-soon{display:flex;flex-direction:column;margin-bottom:56px}
+.coming-art{order:1;min-height:285px}
+.coming-copy{order:2;padding:34px 6vw 32px}
+.coming-copy h2{font-size:2.35rem;line-height:.98;margin:8px 0 14px}
+.coming-copy p{font-size:1rem;line-height:1.5;margin-bottom:18px}
+.coming-copy .secondary{width:100%}
+.coming-note{font-size:.78rem;line-height:1.4}
+.fulano-bike-image{object-position:38% center}
+}
