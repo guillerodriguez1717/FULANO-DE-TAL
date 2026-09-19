@@ -28,10 +28,30 @@ function NewspaperTicker() {
 }
 
 const shopWorlds = [
-  ['Deco, hogar y bazar','Objetos útiles, lindos y fáciles de sumar a la casa.'],
-  ['Eventos y repostería','Descartables, cotillón, harinas, frutos secos, dulce de leche e insumos para cumpleaños.'],
-  ['Textil y empresas','Remeras para eventos, maratones, empresas y trabajos textiles especiales.'],
-  ['Personalizados','Tablas, regalos y pedidos especiales hechos para cada ocasión.'],
+  {
+    title: 'Deco, hogar y bazar',
+    text: 'Objetos útiles, lindos y fáciles de sumar a la casa.',
+    kicker: 'Para todos los días',
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85',
+  },
+  {
+    title: 'Eventos y repostería',
+    text: 'Descartables, cotillón, harinas, frutos secos, dulce de leche e insumos para cumpleaños.',
+    kicker: 'También mayorista',
+    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=85',
+  },
+  {
+    title: 'Textil y empresas',
+    text: 'Remeras para eventos, maratones, empresas y trabajos textiles especiales.',
+    kicker: 'Para grupos y marcas',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=85',
+  },
+  {
+    title: 'Personalizados',
+    text: 'Tablas, regalos y pedidos especiales hechos para cada ocasión.',
+    kicker: 'Hecho para vos',
+    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=85',
+  },
 ]
 
 function Home({ navigate, openProduct }) {
@@ -42,7 +62,7 @@ function Home({ navigate, openProduct }) {
 
     <section className="section category-section"><div className="category-heading"><span className="eyebrow">Muebles por ambiente</span><h2>Entrá por donde empieza tu casa.</h2><p>Living, dormitorio, cocina, baño, oficina y más. Elegí el ambiente y después vemos juntos medidas, opciones y tiempos.</p></div><div className="category-grid">{categories.map(c => <button className="category-card" key={c.name} onClick={() => c.catalog ? navigate('catalog', c.name) : navigate('contact')}><img src={c.image} alt={c.name}/><span className="category-copy"><small>{c.subtitle}</small><strong>{c.name}</strong><em>{c.catalog ? 'Ver muebles' : 'Consultar'}</em><ArrowRight/></span></button>)}</div></section>
 
-    <section className="section worlds-section"><SectionTitle eyebrow="Muebles y algo más" title="Todo lo que puede aparecer por lo de Fulano" text="No queremos mezclar todo porque sí. Cada rubro tendrá su espacio, su forma de compra y sus condiciones claras."/><div className="world-grid">{shopWorlds.map(([title,text],i)=><article className="world-card" key={title}><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p><button className="text-button" onClick={() => navigate('contact')}>Consultar <ArrowRight size={16}/></button></article>)}</div></section>
+    <section className="section worlds-section"><SectionTitle eyebrow="Muebles y algo más" title="Todo lo que puede aparecer por lo de Fulano" text="Cada rubro tiene su lugar, su estilo y su forma de compra. Así podés recorrer sin que parezca que vendemos cualquier cosa mezclada."/><div className="world-grid">{shopWorlds.map((world,i)=><article className="world-card" key={world.title}><div className="world-image"><img src={world.image} alt={world.title}/><span>{world.kicker}</span></div><div className="world-body"><small>{String(i+1).padStart(2,'0')} · FULANO DE TAL</small><h3>{world.title}</h3><p>{world.text}</p><button className="text-button" onClick={() => navigate('contact')}>Consultar <ArrowRight size={16}/></button></div></article>)}</div></section>
 
     <section className="coming-soon"><div className="coming-copy"><span className="eyebrow">PRÓXIMAMENTE</span><h2>Fulano agarró la bici y salió a investigar.</h2><p>Anda buscando nuevos productos, proveedores y cosas útiles para sumar a la tienda. Cuando vuelva con algo bueno, te lo contamos acá.</p><button className="secondary" onClick={() => navigate('contact')}>Tengo algo para recomendarle</button></div><div className="coming-art"><div className="bike-mark" aria-hidden="true">🚲</div><Fulano scene="search"/></div></section>
 
