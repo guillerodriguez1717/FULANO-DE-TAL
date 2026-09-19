@@ -865,3 +865,40 @@ line-height:1.5;
 margin-bottom:19px
 }
 }
+
+
+/* Integración del mensaje de marca: sin segundo logo colgando bajo la ilustración */
+.hero-tagline{
+display:flex;
+align-items:center;
+gap:12px;
+margin:0 0 18px
+}
+.hero-tagline span{
+font:800 .76rem 'Fraunces',serif;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:var(--terracotta)
+}
+.hero-tagline strong{
+font:500 1rem 'Fraunces',serif;
+color:var(--olive)
+}
+
+@media(max-width:600px){
+.hero-tagline{
+display:block;
+margin:0 0 14px
+}
+.hero-tagline span{
+display:block;
+margin-bottom:5px;
+font-size:.72rem
+}
+.hero-tagline strong{
+display:block;
+font-size:1.02rem;
+line-height:1.25
+}
+.hero-brand-lockup{display:none!important}
+}
