@@ -205,3 +205,44 @@ header .logo-image{height:58px;max-width:138px}
 .hero-brand{margin-top:14px}
 .hero h1{margin-top:14px}
 }
+
+
+/* Portada mobile: una sola presencia gráfica de marca */
+@media(max-width:600px){
+header .logo-image{display:none}
+header .logo{min-width:auto}
+header .logo::after{
+content:'FULANO DE TAL';
+font:600 .86rem 'Fraunces',serif;
+letter-spacing:.08em;
+color:var(--charcoal);
+white-space:nowrap
+}
+.hero-mobile-brand{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+gap:8px;
+padding:8px 0 24px;
+margin-bottom:6px;
+border-bottom:0
+}
+.hero-mobile-brand img{
+width:min(78vw,310px);
+height:auto;
+display:block
+}
+.hero-mobile-brand span{
+font:500 1rem 'Fraunces',serif;
+color:var(--olive);
+letter-spacing:.02em
+}
+.hero-brand{justify-content:center;align-items:center;margin-top:4px}
+.hero-descriptor{text-align:center}
+.hero-copy{text-align:center;padding-top:24px}
+.hero-copy>p{max-width:34rem;margin-left:auto;margin-right:auto}
+.hero-actions{max-width:360px;margin-left:auto;margin-right:auto;width:100%}
+.hero-note{text-align:left}
+}
