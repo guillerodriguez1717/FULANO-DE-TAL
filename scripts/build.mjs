@@ -11,7 +11,7 @@ mkdirSync('dist/assets', { recursive: true }); mkdirSync('dist/vendor', { recurs
 cpSync('.build', 'dist/assets', { recursive: true }); cpSync('vendor', 'dist/vendor', { recursive: true }); cpSync('src/styles.css', 'dist/styles.css')
 if (existsSync('public')) cpSync('public', 'dist', { recursive: true })
 // Copy approved brand images stored at the repository root into the deploy output.
-for (const brandImage of ['fulano-de-tal-logo-horizontal.png', 'fulano-de-tal-sello-redondo.png']) {
+for (const brandImage of ['fulano-de-tal-logo-horizontal.png', 'fulano-de-tal-sello-redondo.png', 'fulano-bici.webp']) {
   if (existsSync(brandImage)) cpSync(brandImage, join('dist', brandImage))
 }
 const javascriptFiles = readdirSync('dist/assets', { recursive: true })
