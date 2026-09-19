@@ -4,6 +4,7 @@ import { extname, join } from 'node:path'
 
 const basePath = `/${(process.env.SITE_BASE || '').replace(/^\/+|\/+$/g, '')}`.replace(/^\/$/, '/')
 const assetPath = basePath === '/' ? '/' : `${basePath}/`
+const cacheVersion = (process.env.GITHUB_SHA || Date.now().toString()).slice(0, 12)
 
 rmSync('dist', { recursive: true, force: true }); rmSync('.build', { recursive: true, force: true })
 execFileSync('tsc', ['-p', 'tsconfig.json'], { stdio: 'inherit' })
@@ -31,7 +32,7 @@ for (const file of javascriptFiles) {
 }
 const html=readFileSync('index.html','utf8')
   .replace('</head>', `    <base href="${assetPath}">\n  </head>`)
-  .replace('<script type="module" src="/src/main.jsx"></script>',`<script type="importmap">{"imports":{"react":"${assetPath}vendor/react.js","react/jsx-runtime":"${assetPath}vendor/jsx-runtime.js","react-dom/client":"${assetPath}vendor/react-dom-client.js","lucide-react":"${assetPath}vendor/lucide-react.js"}}</script>\n    <link rel="stylesheet" href="${assetPath}styles.css" />\n    <script type="module" src="${assetPath}assets/main.js"></script>`)
+  .replace('<script type="module" src="/src/main.jsx"></script>',`<script type="importmap">{"imports":{"react":"${assetPath}vendor/react.js","react/jsx-runtime":"${assetPath}vendor/jsx-runtime.js","react-dom/client":"${assetPath}vendor/react-dom-client.js","lucide-react":"${assetPath}vendor/lucide-react.js"}}</script>\n    <link rel="stylesheet" href="${assetPath}styles.css?v=${cacheVersion}" />\n    <script type="module" src="${assetPath}assets/main.js?v=${cacheVersion}"></script>`)
 writeFileSync('dist/index.html',html)
 rmSync('.build',{recursive:true,force:true})
 console.log(`Built static prototype in dist/ for ${assetPath}`)
