@@ -104,3 +104,34 @@ header{height:92px;padding:8px 5vw}
 .coming-art .fulano-art{width:210px}
 .bike-mark{font-size:6rem;right:8%;bottom:20%}
 }
+
+
+/* Pulido del bloque de muebles por ambiente */
+.category-section{padding-top:88px}
+.category-heading{max-width:880px;margin-bottom:34px}
+.category-heading h2{margin:10px 0 14px;max-width:760px}
+.category-heading p{max-width:650px;color:var(--muted);font-size:1.05rem}
+.category-section .category-grid{grid-template-columns:repeat(4,1fr);gap:12px}
+.category-section .category-card{height:330px;border-radius:2px}
+.category-section .category-card:before{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);z-index:1;pointer-events:none}
+.category-section .category-card:after{inset:28% 0 0;background:linear-gradient(transparent,rgba(20,20,17,.84))}
+.category-section .category-copy{bottom:18px;left:18px;right:18px}
+.category-section .category-copy small{font-size:.76rem;letter-spacing:.02em;opacity:.88}
+.category-section .category-copy strong{display:block;font-size:1.85rem;margin:4px 0 7px}
+.category-section .category-copy em{font-style:normal;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;opacity:.82}
+.category-section .category-copy svg{position:absolute;right:0;bottom:0}
+@media(max-width:900px){
+.category-section .category-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.category-section{padding:58px 4vw 62px}
+.category-heading{margin-bottom:24px}
+.category-heading h2{font-size:2.65rem}
+.category-section .category-grid{display:grid;grid-template-columns:1fr 1fr;overflow:visible;gap:8px}
+.category-section .category-card{min-width:0;height:245px}
+.category-section .category-copy{left:13px;right:13px;bottom:13px}
+.category-section .category-copy strong{font-size:1.34rem}
+.category-section .category-copy small{font-size:.67rem}
+.category-section .category-copy em{font-size:.62rem}
+.category-section .category-copy svg{width:18px;height:18px}
+}
