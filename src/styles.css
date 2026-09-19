@@ -719,3 +719,72 @@ margin-bottom:20px
 
 /* En desktop también evitamos duplicar la cinta editorial justo debajo del hero. */
 .hero + .newspaper-ticker{display:none}
+
+
+/* Simplificación fuerte de la portada mobile: una sola escena continua */
+@media(max-width:600px){
+.hero.hero-integrated{
+background:#f7f2e8;
+border:0
+}
+.hero-integrated .hero-image{
+height:36vh;
+min-height:280px;
+max-height:360px;
+border-radius:0
+}
+.hero-mini-ticker{
+background:#e6d2aa;
+padding:8px 0;
+border-top:0;
+border-bottom:1px solid rgba(41,39,34,.12)
+}
+.hero-mini-ticker-item{
+font-size:.72rem;
+padding:0 13px;
+gap:10px
+}
+.hero-integrated .hero-copy{
+padding:24px 5vw 32px;
+background:#f7f2e8;
+border:0;
+box-shadow:none
+}
+.hero-brand-lockup{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:12px;
+margin:0 0 18px
+}
+.hero-brand-lockup img{
+width:180px;
+max-height:82px;
+object-fit:contain;
+object-position:left center
+}
+.hero-brand-lockup strong{
+font:500 .9rem 'Fraunces',serif;
+line-height:1.2;
+max-width:140px;
+color:var(--olive)
+}
+.hero-integrated h1{
+font-size:clamp(2.55rem,10.8vw,3.7rem);
+line-height:.97;
+margin:0 0 16px
+}
+.hero-integrated .hero-copy>p{
+font-size:1rem;
+line-height:1.5;
+margin:0 0 20px;
+max-width:32rem
+}
+.hero-actions{
+gap:10px
+}
+.hero-note{
+margin-top:20px!important;
+padding-top:14px!important
+}
+}
