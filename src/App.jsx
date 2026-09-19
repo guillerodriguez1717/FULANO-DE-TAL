@@ -22,6 +22,17 @@ const newspaperNotices = [
   'Próximamente · Fulano agarró la bici y salió a investigar',
 ]
 
+const heroTickerItems = [
+  'Muebles',
+  'Deco',
+  'Bazar',
+  'Pedidos especiales',
+  'Atención personalizada',
+  'Textil y empresas',
+  'Eventos y repostería',
+  'Mayorista para comercios',
+]
+
 function NewspaperTicker() {
   const loop = [...newspaperNotices, ...newspaperNotices]
   return <section className="newspaper-ticker" aria-label="Novedades de Fulano de Tal"><div className="ticker-track">{loop.map((notice, i) => <div className="ticker-notice" key={i}><span>EDICIÓN ESPECIAL</span><strong>{notice}</strong><b>✦</b></div>)}</div></section>
@@ -56,7 +67,7 @@ const shopWorlds = [
 
 function Home({ navigate, openProduct }) {
   return <main>
-    <section className="hero hero-integrated"><div className="hero-copy"><div className="hero-brand-lockup"><img src="fulano-de-tal-logo-horizontal.png" alt="Fulano de Tal"/><div><span className="hero-mobile-kicker">Muebles y algo más</span><strong>Un tipo que te da una mano.</strong></div></div><h1>Encontrá eso que <em>te viene haciendo falta.</em></h1><p>Muebles, deco, bazar y pedidos especiales. Te ayudamos a encontrar una buena opción y coordinamos cada detalle con vos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
+    <section className="hero hero-integrated"><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/></div><div className="hero-mini-ticker" aria-label="Qué podés encontrar en Fulano de Tal"><div className="hero-mini-ticker-track">{[...heroTickerItems,...heroTickerItems].map((item,i)=><span className="hero-mini-ticker-item" key={i}>{item}<b>✦</b></span>)}</div></div><div className="hero-copy"><div className="hero-brand-lockup"><img src="fulano-de-tal-logo-horizontal.png" alt="Fulano de Tal"/><div><span className="hero-mobile-kicker">Muebles y algo más</span><strong>Un tipo que te da una mano.</strong></div></div><h1>Encontrá eso que <em>te viene haciendo falta.</em></h1><p>Muebles, deco, bazar y pedidos especiales. Te ayudamos a encontrar una buena opción y coordinamos cada detalle con vos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div></section>
 
     <NewspaperTicker />
 
