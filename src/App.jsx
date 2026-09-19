@@ -13,11 +13,27 @@ const openWhatsApp = (message) => window.open(`https://wa.me/${WHATSAPP_NUMBER}?
 
 function SectionTitle({ eyebrow, title, text, action }) { return <div className="section-title"><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>{action}</div> }
 
+const newspaperNotices = [
+  'Envíos a todo el país · a cargo del cliente',
+  'Muebles a pedido',
+  'Atención personalizada',
+  'Ofertas por pedido',
+  '¿Buscás algo especial? Preguntale a Fulano',
+  'Próximamente · Fulano agarró la bici y salió a investigar',
+]
+
+function NewspaperTicker() {
+  const loop = [...newspaperNotices, ...newspaperNotices]
+  return <section className="newspaper-ticker" aria-label="Novedades de Fulano de Tal"><div className="ticker-track">{loop.map((notice, i) => <div className="ticker-notice" key={i}><span>EDICIÓN ESPECIAL</span><strong>{notice}</strong><b>✦</b></div>)}</div></section>
+}
+
 function Home({ navigate, openProduct }) {
   return <main>
-    <section className="hero"><div className="hero-copy"><div className="hero-brand"><span className="eyebrow">FULANO DE TAL</span><span className="hero-descriptor">Muebles y más</span></div><h1>Muebles a pedido, <em>como lo soñás.</em></h1><p>Te ayudamos a elegir y coordinamos cada detalle del pedido hasta la entrega. Un mueble pensado para tu casa, con acompañamiento de principio a fin.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
+    <section className="hero"><div className="hero-copy"><div className="hero-brand"><span className="eyebrow">FULANO DE TAL</span><span className="hero-descriptor">Muebles y algo más</span></div><h1>Encontrá eso que <em>le falta a tu casa.</em></h1><p>Muebles, deco, bazar y pedidos especiales. Te ayudamos a encontrar una buena opción y coordinamos cada detalle con vos.</p><div className="hero-actions"><button className="primary" onClick={() => navigate('contact')}>Pedí tu presupuesto <ArrowRight size={18}/></button><button className="secondary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablá con Fulano</button></div><div className="hero-note"><span>Compra segura</span><span>Acompañamiento en todo el proceso</span><span>Entrega coordinada</span></div></div><div className="hero-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90" alt="Living cálido con muebles contemporáneos"/><div className="hero-brand-seal"><BrandSeal/><span>Fulano te da<br/><strong>una mano</strong></span></div></div></section>
 
-    <section className="section newspaper-section"><div className="newspaper-head"><small>EDICIÓN ESPECIAL · FULANO DE TAL</small><h2>Nuestras categorías</h2><p>Ideas para tu casa, elegidas con tiempo y pedidas especialmente para vos.</p></div><div className="category-grid">{categories.map(c => <button className="category-card" key={c.name} onClick={() => navigate('catalog', c.name)}><img src={c.image} alt=""/><span><small>{c.subtitle}</small><strong>{c.name}</strong><ArrowRight/></span></button>)}</div></section>
+    <NewspaperTicker />
+
+    <section className="section category-section"><SectionTitle eyebrow="Muebles por ambiente" title="¿Para qué rincón estás buscando?" text="Empezá por el ambiente. Después vemos juntos medidas, opciones, tiempos y entrega."/><div className="category-grid">{categories.map(c => <button className="category-card" key={c.name} onClick={() => navigate('catalog', c.name)}><img src={c.image} alt=""/><span><small>{c.subtitle}</small><strong>{c.name}</strong><ArrowRight/></span></button>)}</div></section>
 
     <section className="section products-section"><SectionTitle eyebrow="Los más mirados" title="Favoritos de la casa" action={<button className="text-button" onClick={() => navigate('catalog')}>Ver todos los muebles →</button>}/><div className="product-grid">{products.filter(p => p.featured).map(p => <ProductCard key={p.id} product={p} onOpen={openProduct}/>)}</div></section>
 
