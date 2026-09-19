@@ -809,3 +809,59 @@ letter-spacing:.045em;
 padding:0 14px
 }
 }
+
+
+/* Portada definitiva: Fulano como protagonista */
+.hero-fulano-welcome{
+background:#efe2c8
+}
+.hero-fulano-welcome img{
+object-fit:cover;
+object-position:center center
+}
+
+@media(max-width:600px){
+.hero.hero-integrated{
+background:#f7f2e8
+}
+.hero-fulano-welcome{
+height:auto!important;
+min-height:0!important;
+max-height:none!important;
+background:#efe2c8;
+overflow:hidden
+}
+.hero-fulano-welcome img{
+position:relative!important;
+inset:auto!important;
+width:100%!important;
+height:auto!important;
+display:block!important;
+object-fit:contain!important;
+object-position:center top!important
+}
+.hero-integrated .hero-copy{
+padding:22px 5vw 32px
+}
+.hero-brand-lockup{
+gap:10px;
+margin-bottom:16px
+}
+.hero-brand-lockup img{
+width:170px;
+max-height:76px
+}
+.hero-brand-lockup strong{
+font-size:.88rem;
+max-width:132px
+}
+.hero-integrated h1{
+font-size:clamp(2.45rem,10.4vw,3.55rem);
+margin-bottom:14px
+}
+.hero-integrated .hero-copy>p{
+font-size:.98rem;
+line-height:1.5;
+margin-bottom:19px
+}
+}
