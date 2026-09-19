@@ -379,3 +379,73 @@ border-top:1px solid rgba(41,39,34,.14)
 }
 .hero-mobile-brand,.hero-brand{display:none!important}
 }
+
+
+/* Corrección: mantener la imagen visible dentro de la primera escena mobile */
+@media(max-width:600px){
+.hero.hero-integrated{
+display:flex;
+flex-direction:column;
+padding:0;
+background:linear-gradient(180deg,#efe2c8 0%,#f7f2e8 100%)
+}
+.hero-integrated .hero-image{
+order:1;
+position:relative;
+margin:0;
+min-height:380px;
+height:46vh;
+border-radius:0 0 28px 28px;
+overflow:hidden;
+box-shadow:none
+}
+.hero-integrated .hero-image img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+display:block
+}
+.hero-integrated .hero-image::before{
+content:'';
+position:absolute;
+inset:0;
+z-index:1;
+background:linear-gradient(180deg,rgba(41,39,34,.08) 35%,rgba(41,39,34,.5) 100%)
+}
+.hero-integrated .hero-image::after{
+content:'Muebles · Deco · Bazar · Pedidos especiales';
+z-index:2;
+left:5vw;
+right:5vw;
+bottom:18px;
+background:rgba(247,242,232,.92);
+border:1px solid rgba(41,39,34,.12);
+border-radius:999px;
+padding:10px 14px;
+font:600 .86rem 'Fraunces',serif;
+text-align:center
+}
+.hero-integrated .hero-copy{
+order:2;
+margin:-34px 4vw 0;
+padding:24px 5vw 34px;
+background:rgba(247,242,232,.98);
+border:1px solid rgba(41,39,34,.08);
+border-radius:24px 24px 0 0;
+position:relative;
+z-index:3;
+box-shadow:0 -10px 30px rgba(41,39,34,.07)
+}
+.hero-brand-lockup{
+margin-bottom:18px
+}
+.hero-brand-lockup img{
+width:min(78vw,330px);
+max-height:145px
+}
+.hero-integrated h1{
+font-size:clamp(2.8rem,12vw,4.2rem)
+}
+}
