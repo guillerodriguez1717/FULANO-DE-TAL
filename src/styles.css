@@ -246,3 +246,27 @@ letter-spacing:.02em
 .hero-actions{max-width:360px;margin-left:auto;margin-right:auto;width:100%}
 .hero-note{text-align:left}
 }
+
+
+/* Rediseño marcado de la primera vista mobile */
+@media(max-width:600px){
+.topbar{display:none}
+header{height:64px;padding:0 4vw;background:rgba(247,242,232,.97)}
+header .logo{width:42px;height:42px;min-width:42px;border:1px solid rgba(41,39,34,.16);border-radius:50%;display:grid;place-items:center;padding:0}
+header .logo::after{content:'FT';font:600 .92rem 'Fraunces',serif;letter-spacing:.02em}
+header .logo-image{display:none}
+.search-button,.menu-button{width:40px;height:40px}
+.hero-copy{text-align:left;padding:18px 5vw 34px}
+.hero-mobile-brand{display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px 12px 26px;margin:0 0 24px;background:#efe2c8;border:1px solid rgba(41,39,34,.12);box-shadow:0 14px 32px rgba(41,39,34,.06)}
+.hero-mobile-logo-wrap{width:100%;display:flex;justify-content:center;align-items:center;padding:8px 0 12px}
+.hero-mobile-brand img{width:min(88vw,360px);max-height:190px;object-fit:contain}
+.hero-mobile-kicker{display:inline-flex!important;width:auto;padding:6px 10px;border:1px solid rgba(41,39,34,.18);background:rgba(255,253,248,.6);font-size:.72rem!important;text-transform:uppercase;letter-spacing:.12em;color:var(--terracotta)!important;font-weight:700}
+.hero-mobile-brand strong{font:500 1.16rem 'Fraunces',serif;color:var(--olive);margin-top:9px}
+.hero-brand{display:none}
+.hero h1{margin:0 0 18px;font-size:clamp(3.35rem,14vw,4.8rem);line-height:.93;text-align:left}
+.hero h1 em{margin-top:7px}
+.hero-copy>p{text-align:left;margin:0 0 22px}
+.hero-actions{margin:0;max-width:none}
+.hero-note{text-align:left;border-top:1px solid rgba(41,39,34,.12);padding-top:18px}
+.hero-image:after{content:'Muebles · Deco · Bazar · Pedidos especiales'}
+}
