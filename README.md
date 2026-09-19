@@ -35,7 +35,7 @@ El número para las consultas se configura en la constante `WHATSAPP_NUMBER` de 
 
 ### Publicación en GitHub Pages
 
-El workflow `.github/workflows/deploy-pages.yml` valida, compila y publica automáticamente `dist/` con la ruta base `/FULANO-DE-TAL/` cada vez que se envían cambios a `work` o `main`. También se puede ejecutar manualmente desde la pestaña **Actions**.
+El workflow `.github/workflows/deploy-pages.yml` valida, compila y publica automáticamente `dist/` con `SITE_BASE=/FULANO-DE-TAL/` cada vez que se envían cambios a `main`. También se puede ejecutar manualmente desde la pestaña **Actions**.
 
 En el repositorio de GitHub, ir a **Settings → Pages → Build and deployment** y elegir **GitHub Actions** en **Source**. No hay que seleccionar una carpeta ni una rama de publicación: el workflow entrega directamente el artefacto generado a Pages.
 
