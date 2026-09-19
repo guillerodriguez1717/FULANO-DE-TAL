@@ -788,3 +788,24 @@ margin-top:20px!important;
 padding-top:14px!important
 }
 }
+
+
+/* Una sola navegación temática: la cinta móvil reemplaza la tira fija de categorías */
+.mobile-category-strip{display:none!important}
+
+@media(max-width:600px){
+.hero-mini-ticker{order:1}
+.hero-integrated .hero-image{order:2}
+.hero-integrated .hero-copy{order:3}
+.hero-mini-ticker{
+background:#e7d3ab;
+border-top:0;
+border-bottom:1px solid rgba(41,39,34,.13);
+padding:9px 0
+}
+.hero-mini-ticker-item{
+font-size:.73rem;
+letter-spacing:.045em;
+padding:0 14px
+}
+}
