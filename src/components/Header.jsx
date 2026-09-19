@@ -36,13 +36,5 @@ export default function Header({ navigate, onSearch }) {
         <button type="submit">Buscar</button>
       </form>
     </div>
-    <div className="mobile-category-strip" aria-label="Categorías principales">
-      <button onClick={()=>goTo('catalog')}>Muebles</button>
-      <button onClick={()=>goTo('contact')}>Deco</button>
-      <button onClick={()=>goTo('contact')}>Bazar</button>
-      <button onClick={()=>goTo('contact')}>Eventos</button>
-      <button onClick={()=>goTo('contact')}>Textil</button>
-      <button onClick={()=>goTo('contact')}>Personalizados</button>
-    </div>
   </>
 }
