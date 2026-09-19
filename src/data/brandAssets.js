@@ -1,18 +1,12 @@
 /**
- * Reemplazar estos valores cuando estén disponibles los archivos definitivos.
- * Las rutas son relativas al <base> del sitio, por lo que funcionan tanto en
- * desarrollo como bajo /FULANO-DE-TAL/ en GitHub Pages.
+ * Activos definitivos de la identidad de Fulano de Tal.
+ * Las rutas respetan el <base> del sitio y funcionan bajo /FULANO-DE-TAL/.
  */
 export const brandAssets = {
-  logoHorizontal: null, // Ejemplo: 'brand/logo-horizontal.svg'
-  logoRound: null, // Ejemplo: 'brand/logo-round.svg'
-  fulanoMain: null, // Ejemplo: 'brand/fulano-main.svg'
+  logoHorizontal: 'fulano-de-tal-logo-horizontal.png',
+  logoRound: 'fulano-de-tal-sello-redondo.png',
+  fulanoMain: null,
   fulanoScenes: {
-    // measure: 'brand/fulano-measure.svg',
-    // phone: 'brand/fulano-phone.svg',
-    // search: 'brand/fulano-search.svg',
-    // list: 'brand/fulano-list.svg',
-    // box: 'brand/fulano-box.svg',
-    // hello: 'brand/fulano-hello.svg',
+    // Próxima etapa: variantes del personaje Fulano para cada ayuda contextual.
   },
 }
