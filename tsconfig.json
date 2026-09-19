@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react-jsx",
+    "outDir": ".build",
+    "rootDir": "src",
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "noEmitOnError": false
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx"]
+}
