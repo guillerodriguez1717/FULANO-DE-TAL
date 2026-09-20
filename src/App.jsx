@@ -43,28 +43,28 @@ const shopWorlds = [
   {
     title: 'Deco, hogar y bazar',
     text: 'Objetos lindos y útiles para sumar a tu casa.',
-    fulano: 'Una cosita acá, otra allá… y cambia la casa. Sin hacer un carnaval.',
+    fulano: 'Chusmeá tranquilo. Una cosita acá, otra allá… y la casa cambia sin hacer un carnaval.',
     kicker: 'Para todos los días',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85',
   },
   {
     title: 'Eventos y repostería',
     text: 'Productos e insumos para cumpleaños, mesas dulces y ocasiones especiales.',
-    fulano: 'Para el cumple o la juntada, mejor que sobre una servilleta y no falte nada a último momento.',
+    fulano: 'Pispeá con tiempo, que para el cumple o la juntada es mejor que sobre una servilleta y no falte nada.',
     kicker: 'También mayorista',
     image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=85',
   },
   {
     title: 'Textil y empresas',
     text: 'Pedidos para equipos, eventos, empresas y trabajos textiles especiales.',
-    fulano: 'Remeras para el equipo, la empresa o la barra. Todos juntos, pero cada pedido a su medida.',
+    fulano: 'Para el equipo, la empresa o la barra, lo charlamos y buscamos la vuelta. Cada pedido a su medida.',
     kicker: 'Para grupos y marcas',
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=85',
   },
   {
     title: 'Personalizados',
     text: 'Regalos, tablas y detalles hechos especialmente para cada ocasión.',
-    fulano: 'Si es para regalar, que tenga un poquito de historia. Que no pase sin pena ni gloria.',
+    fulano: 'Si es para regalar, que tenga un poquito de historia. Si no, queda como mosquita muerta.',
     kicker: 'Hecho para vos',
     image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=85',
   },
@@ -76,7 +76,7 @@ function Home({ navigate, openProduct }) {
 
     <section className="section category-section"><div className="category-heading"><span className="eyebrow">Muebles por ambiente</span><h2>Elegí el espacio. Fulano te da una mano.</h2><p>Después vemos juntos opciones, medidas y entrega. Sin hacer un mundo de cada cosa.</p></div><div className="category-grid">{categories.map(c => <button className="category-card category-card-clean" key={c.name} onClick={() => c.catalog ? navigate('catalog', c.name) : navigate('contact')}><span className="category-image"><img src={c.image} alt={c.name}/></span><span className="category-copy"><strong>{c.name}</strong><small>{c.subtitle}</small><span className="fulano-says"><b>Fulano dice:</b><span>{c.fulano}</span></span><span className="category-cta"><em>{c.catalog ? 'Ver muebles' : 'Consultar'}</em><ArrowRight/></span></span></button>)}</div></section>
 
-    <section className="section worlds-section"><SectionTitle eyebrow="Muebles y algo más" title="Fulano también anda en otras cosas" text="Casa, eventos, trabajo o un regalo especial. Si hay algo útil para resolver, lo charlamos."/><div className="world-grid">{shopWorlds.map((world,i)=><article className="world-card" key={world.title}><div className="world-image"><img src={world.image} alt={world.title}/><span>{world.kicker}</span></div><div className="world-body"><small>{String(i+1).padStart(2,'0')} · FULANO DE TAL</small><h3>{world.title}</h3><p>{world.text}</p><p className="world-fulano"><b>Fulano dice:</b> {world.fulano}</p><button className="text-button" onClick={() => navigate('contact')}>Consultar <ArrowRight size={16}/></button></div></article>)}</div></section>
+    <section className="section worlds-section"><SectionTitle eyebrow="Muebles y algo más" title="Fulano también anda en otras cosas" text="Casa, eventos, trabajo o un regalo especial. Si hay algo útil para resolver, lo charlamos."/><div className="world-grid">{shopWorlds.map((world,i)=><article className="world-card" key={world.title}><div className="world-image"><img src={world.image} alt={world.title}/><span>{world.kicker}</span></div><div className="world-body"><small>{String(i+1).padStart(2,'0')} · FULANO DE TAL</small><h3>{world.title}</h3><p className="world-summary">{world.text}</p><div className="world-fulano"><b>Fulano dice:</b><span>{world.fulano}</span></div><button className="text-button world-cta" onClick={() => navigate('contact')}>Consultar <ArrowRight size={16}/></button></div></article>)}</div></section>
 
     <section className="coming-soon"><div className="coming-copy"><span className="eyebrow">PRÓXIMAMENTE</span><h2>Fulano agarró la bici y salió a investigar.</h2><p>Anda recorriendo, preguntando y juntando ideas para sumar nuevas cosas a la tienda. Si tenés una sugerencia, una propuesta o algo para ofrecer, Fulano quiere escucharte.</p><button className="secondary" onClick={() => navigate('contact')}>Tengo una idea para Fulano</button><small className="coming-note">Podés sugerir un producto, acercar una propuesta o recomendarnos algo para sumar.</small></div><div className="coming-art"><img className="fulano-bike-image" src="fulano-bici.webp" alt="Fulano en bicicleta, saliendo a buscar nuevas ideas y productos"/></div></section>
 
