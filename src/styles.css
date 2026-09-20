@@ -1180,3 +1180,81 @@ padding:11px 12px!important;
 margin:12px 0 10px!important
 }
 }
+
+
+/* Corrección definitiva de cards: neutraliza el layout viejo superpuesto */
+.category-card-clean{
+height:auto!important;
+min-width:0!important;
+}
+
+.category-card-clean span{
+position:static!important;
+inset:auto!important;
+left:auto!important;
+right:auto!important;
+bottom:auto!important;
+top:auto!important;
+color:inherit!important;
+z-index:auto!important;
+}
+
+.category-card-clean .category-image{
+position:relative!important;
+}
+
+.category-card-clean .category-image img{
+position:absolute!important;
+inset:0!important;
+}
+
+.category-card-clean .category-copy,
+.category-card-clean .fulano-says,
+.category-card-clean .fulano-says span,
+.category-card-clean .category-cta{
+position:static!important;
+}
+
+@media(max-width:600px){
+.category-grid{
+display:grid!important;
+grid-template-columns:1fr!important;
+gap:18px!important;
+overflow:visible!important;
+scroll-snap-type:none!important;
+}
+
+.category-card-clean{
+width:100%!important;
+height:auto!important;
+min-width:0!important;
+}
+
+.category-card-clean .category-image{
+width:100%!important;
+aspect-ratio:16/9!important;
+}
+
+.category-card-clean .category-copy{
+padding:17px 18px 16px!important;
+}
+
+.category-card-clean .category-copy strong{
+font-size:1.55rem!important;
+}
+
+.category-card-clean .category-copy small{
+font-size:.82rem!important;
+}
+
+.category-card-clean .fulano-says{
+margin:13px 0 11px!important;
+padding:12px 13px!important;
+font-size:.9rem!important;
+line-height:1.38!important;
+}
+
+.category-card-clean .category-cta{
+padding-top:11px!important;
+}
+}
