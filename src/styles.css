@@ -1659,3 +1659,134 @@ margin:16px 0 18px
 width:100%!important
 }
 }
+
+
+/* Cierre de home: Preguntale a Fulano + footer */
+.help-feature{
+padding-top:62px!important;
+padding-bottom:62px!important
+}
+.fulano-help-clean{
+max-width:980px!important;
+margin:auto!important;
+display:grid!important;
+grid-template-columns:220px 1fr!important;
+align-items:center!important;
+gap:32px!important;
+padding:34px 44px 34px 30px!important;
+border-radius:24px!important;
+background:#f0e4ca!important;
+box-shadow:0 18px 50px rgba(30,28,23,.18)!important
+}
+.fulano-help-clean .help-character{
+display:flex;
+align-items:flex-end;
+justify-content:center;
+align-self:stretch
+}
+.fulano-help-clean .fulano-art{
+width:190px!important;
+max-width:100%!important
+}
+.fulano-help-clean .help-copy h3{
+margin:7px 0 10px!important;
+font:700 2.25rem/1.02 'Fraunces',serif!important;
+color:var(--charcoal)!important
+}
+.fulano-help-clean .help-copy>p{
+max-width:610px!important;
+margin:0!important;
+font-size:1rem!important;
+line-height:1.5!important;
+color:rgba(41,39,34,.76)!important
+}
+.help-fulano-line{
+max-width:570px;
+margin:16px 0 18px;
+padding:12px 14px;
+background:rgba(255,253,248,.68);
+border-left:3px solid var(--terracotta);
+border-radius:0 10px 10px 0;
+font:500 .95rem/1.4 'Fraunces',serif;
+color:var(--charcoal)
+}
+.help-fulano-line b{
+display:block;
+margin-bottom:4px;
+font:800 .66rem/1 system-ui,sans-serif;
+letter-spacing:.09em;
+text-transform:uppercase;
+color:var(--terracotta)
+}
+.help-fulano-line span{display:block}
+.help-contact{
+display:inline-flex!important;
+align-items:center!important;
+gap:8px!important
+}
+.fulano-help-clean .help-copy>small{
+display:block;
+margin-top:10px;
+font-size:.76rem;
+line-height:1.4;
+color:rgba(41,39,34,.6)
+}
+
+footer{
+grid-template-columns:2fr 1fr 1.35fr 1.2fr!important;
+gap:5vw!important
+}
+.footer-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px
+}
+
+@media(max-width:700px){
+.help-feature{
+padding:34px 5vw!important
+}
+.fulano-help-clean{
+grid-template-columns:82px 1fr!important;
+gap:14px!important;
+padding:22px 18px 22px 10px!important;
+border-radius:18px!important
+}
+.fulano-help-clean .fulano-art{
+width:95px!important
+}
+.fulano-help-clean .help-copy h3{
+font-size:1.55rem!important
+}
+.fulano-help-clean .help-copy>p{
+font-size:.92rem!important
+}
+.help-fulano-line{
+grid-column:1/-1;
+font-size:.88rem;
+margin:14px 0 16px
+}
+.help-contact{
+grid-column:1/-1;
+width:100%!important;
+justify-content:center!important
+}
+.fulano-help-clean .help-copy>small{
+font-size:.72rem
+}
+footer{
+grid-template-columns:1fr 1fr!important;
+gap:34px 24px!important;
+padding-top:52px!important
+}
+footer>div:first-child{
+grid-column:1/-1!important
+}
+.footer-bottom{
+grid-column:1/-1!important;
+flex-direction:column;
+align-items:flex-start;
+gap:6px
+}
+}
