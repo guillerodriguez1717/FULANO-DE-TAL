@@ -1382,3 +1382,122 @@ font-size:.88rem!important;
 padding:12px 13px!important
 }
 }
+
+
+/* Productos destacados: cards limpias, útiles y con una sola voz de Fulano */
+.product-card-clean{
+background:#fffdf8!important;
+border:1px solid rgba(41,39,34,.12)!important;
+border-radius:18px!important;
+overflow:hidden!important;
+box-shadow:0 8px 24px rgba(41,39,34,.05)!important
+}
+.product-card-clean .product-image{
+display:block!important;
+position:relative!important;
+width:100%!important;
+aspect-ratio:4/3!important;
+overflow:hidden!important;
+background:#e8dfd1!important
+}
+.product-card-clean .product-image img{
+width:100%!important;
+height:100%!important;
+object-fit:cover!important;
+display:block!important
+}
+.product-card-clean .product-image .tag{
+position:absolute!important;
+top:12px!important;
+left:12px!important;
+background:rgba(247,242,232,.95)!important;
+color:var(--charcoal)!important;
+border:1px solid rgba(41,39,34,.12)!important;
+border-radius:999px!important;
+padding:7px 10px!important;
+font-size:.66rem!important;
+font-weight:800!important;
+letter-spacing:.07em!important;
+text-transform:uppercase!important
+}
+.product-info-clean{
+padding:18px 18px 16px!important
+}
+.product-category{
+display:block!important;
+margin-bottom:5px!important;
+font-size:.68rem!important;
+font-weight:800!important;
+letter-spacing:.08em!important;
+text-transform:uppercase!important;
+color:var(--terracotta)!important
+}
+.product-info-clean h3{
+margin:0!important;
+font:700 1.55rem/1.05 'Fraunces',serif!important;
+color:var(--charcoal)!important
+}
+.product-price{
+margin:8px 0 0!important;
+font-size:.92rem!important;
+font-weight:800!important;
+color:var(--olive)!important
+}
+.product-fulano{
+margin:14px 0 12px!important;
+padding:12px 13px!important;
+background:#f3ead9!important;
+border-left:3px solid var(--terracotta)!important;
+border-radius:0 10px 10px 0!important;
+font:500 .9rem/1.38 'Fraunces',serif!important;
+color:rgba(41,39,34,.9)!important
+}
+.product-fulano b{
+display:block!important;
+margin-bottom:4px!important;
+font:800 .66rem/1 system-ui,sans-serif!important;
+letter-spacing:.09em!important;
+text-transform:uppercase!important;
+color:var(--terracotta)!important
+}
+.product-fulano span{
+display:block!important
+}
+.product-link{
+display:flex!important;
+align-items:center!important;
+justify-content:space-between!important;
+width:100%!important;
+padding:12px 0 0!important;
+margin-top:4px!important;
+border:0!important;
+border-top:1px solid rgba(41,39,34,.09)!important;
+background:none!important;
+font-size:.8rem!important;
+font-weight:800!important;
+letter-spacing:.045em!important;
+text-transform:uppercase!important;
+color:var(--olive)!important
+}
+
+@media(max-width:600px){
+.product-grid{
+grid-template-columns:1fr!important;
+gap:18px!important
+}
+.product-card-clean{
+border-radius:16px!important
+}
+.product-card-clean .product-image{
+aspect-ratio:16/10!important
+}
+.product-info-clean{
+padding:17px 18px 16px!important
+}
+.product-info-clean h3{
+font-size:1.5rem!important
+}
+.product-fulano{
+font-size:.88rem!important
+}
+}
