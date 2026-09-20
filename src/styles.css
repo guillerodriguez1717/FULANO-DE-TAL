@@ -1896,3 +1896,21 @@ text-align:left
 .process-note-trust .process-contact{margin-left:14px}
 @media(max-width:800px){.how-steps-trust{grid-template-columns:1fr 1fr!important}.before-paying-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.how-fulano{font-size:.9rem}.how-steps-trust{grid-template-columns:1fr!important}.how-steps-trust article{padding:20px!important}.before-paying-grid{grid-template-columns:1fr}.process-note-trust .process-contact{display:block;margin:14px 0 0}}
+
+
+/* Contacto: pedir la informacion justa y no prometer un canal aun no configurado */
+.contact-heading>div{max-width:760px}
+.contact-fulano{max-width:650px;margin-top:20px;padding:13px 15px;background:#f3ead9;border-left:3px solid var(--terracotta);border-radius:0 10px 10px 0;font:500 .96rem/1.42 'Fraunces',serif;color:var(--charcoal)}
+.contact-fulano b{display:block;margin-bottom:4px;font:800 .66rem/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--terracotta)}
+.contact-guide{padding-top:48px!important;padding-bottom:85px!important}
+.contact-guide>div:first-child{max-width:760px}
+.contact-guide h2{margin:7px 0 8px;font-size:clamp(2.3rem,4vw,4.2rem)}
+.contact-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.contact-guide-grid article{display:grid;grid-template-columns:42px 1fr;gap:13px;padding:20px;background:#fffdf8;border:1px solid rgba(41,39,34,.12);border-radius:12px}
+.contact-guide-grid article>span{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--olive);color:white;font-weight:800}
+.contact-guide-grid strong{display:block;margin:2px 0 5px}
+.contact-guide-grid p{margin:0;font-size:.88rem;line-height:1.45;color:var(--muted)}
+.contact-channel{margin-top:24px;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:25px;background:#efe2c8;border-radius:12px}
+.contact-channel p{max-width:650px;margin:5px 0 0;color:var(--muted)}
+.contact-pending{padding:7px 11px;border:1px solid rgba(41,39,34,.2);border-radius:999px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:650px){.contact-fulano{font-size:.9rem}.contact-guide-grid{grid-template-columns:1fr}.contact-channel{align-items:flex-start;flex-direction:column}.contact-guide{padding-bottom:55px!important}}
