@@ -1850,3 +1850,27 @@ text-align:left
 .catalog-help h2{font-size:2rem;line-height:1.02}
 .catalog-help .primary{width:100%;margin-top:20px;justify-content:center}
 }
+
+
+/* Ficha de producto: clara para compra bajo pedido */
+.product-detail-clean .detail-copy{max-width:720px}
+.detail-price-note{margin:-8px 0 20px;font-size:.78rem;color:var(--muted)}
+.detail-fulano{margin:20px 0;padding:13px 15px;background:#f3ead9;border-left:3px solid var(--terracotta);border-radius:0 10px 10px 0;font:500 .96rem/1.42 'Fraunces',serif;color:var(--charcoal)}
+.detail-fulano b{display:block;margin-bottom:4px;font:800 .66rem/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--terracotta)}
+.detail-fulano span{display:block}
+.detail-order-note{margin:22px 0 18px;padding:16px 18px;background:#fffdf8;border:1px solid rgba(41,39,34,.13);border-radius:12px}
+.detail-order-note strong{display:block;margin-bottom:5px}
+.detail-order-note span{display:block;font-size:.9rem;line-height:1.45;color:var(--muted)}
+.detail-measure{margin-bottom:80px;padding-top:38px!important;padding-bottom:38px!important;display:flex;align-items:center;justify-content:space-between;gap:35px;background:#efe2c8}
+.detail-measure h2{max-width:700px;margin:7px 0 9px;font-size:clamp(2rem,3.5vw,3.5rem)}
+.detail-measure p{max-width:720px;margin:0;line-height:1.55;color:rgba(41,39,34,.74)}
+.detail-measure .secondary{flex:0 0 auto}
+@media(max-width:700px){
+.product-detail-clean .detail-copy{padding-top:20px!important}
+.product-detail-clean .detail-copy h1{font-size:2.8rem!important}
+.detail-fulano{font-size:.9rem}
+.detail-copy dl>div{grid-template-columns:110px 1fr!important;gap:10px}
+.detail-measure{margin-bottom:55px;display:block;padding:30px 6vw!important}
+.detail-measure h2{font-size:2.2rem;line-height:1}
+.detail-measure .secondary{width:100%;margin-top:20px}
+}
