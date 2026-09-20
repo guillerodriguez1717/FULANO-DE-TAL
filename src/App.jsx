@@ -86,12 +86,10 @@ function Home({ navigate, openProduct }) {
 
     <section className="section help-feature"><FulanoHelp scene="list" onContact={() => navigate('contact')}/></section>
 
-    <section className="section trust"><SectionTitle eyebrow="Comprar con tranquilidad" title="Las cosas claras hacen una buena casa"/><div className="trust-grid">{[[ShieldCheck,'Todo confirmado antes','Precio, plazo y condiciones claras antes de avanzar.'],[MessageCircle,'Personas, no respuestas automáticas','Preguntá lo que necesites. Te responde alguien de verdad.'],[PackageCheck,'Seguimiento cercano','Te acompañamos desde el pedido hasta la entrega.'],[Ruler,'Medidas a la vista','Información simple para elegir sin adivinar.']].map(([Icon,t,d]) => <div key={t}><Icon/><h3>{t}</h3><p>{d}</p></div>)}</div></section>
-
-    <section className="inspiration"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=90" alt="Comedor luminoso y cálido"/><div><span className="eyebrow">Ideas para habitar</span><h2>Una casa con lugar para todos.</h2><p>Texturas nobles, colores tranquilos y muebles que invitan a quedarse un ratito más.</p><button className="secondary" onClick={() => navigate('catalog', 'Comedor')}>Ver comedor</button></div></section>
+    <section className="section trust"><SectionTitle eyebrow="Comprar con tranquilidad" title="Las cosas claras hacen una buena casa"/><div className="trust-grid">{[[ShieldCheck,'Todo confirmado antes','Precio, plazo y condiciones claras antes de avanzar.'],[MessageCircle,'Personas, no respuestas automáticas','Preguntá lo que necesites. Te responde alguien de verdad.'],[PackageCheck,'Seguimiento cercano','Te acompañamos desde el pedido hasta la entrega.'],[Ruler,'Medidas a la vista','Información simple para elegir sin adivinar.']].map(([Icon,t,d]) => <div key={t}><Icon/><h3>{t}</h3><p>{d}</p></div>)}</div><p className="trust-fulano"><b>Fulano dice:</b> “Primero las cosas claras. Después sí, ponemos la pava.”</p></section>
 
     <FAQ />
-    <section className="contact-strip"><div><span className="eyebrow">¿Querés preguntar algo?</span><h2>Del otro lado hay alguien.</h2><p>Mandanos un mensaje. Fulano está mirando el celular con los anteojos un poquito bajos.</p><button className="primary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Escribir por WhatsApp</button></div><Fulano scene="phone"/></section>
+    <section className="contact-strip contact-strip-final"><div><span className="eyebrow">Antes de irte</span><h2>¿Te quedó algo dando vueltas?</h2><p>Mandame un mensaje y lo vemos tranquilo. Sin compromiso y sin vueltas raras.</p><button className="primary" onClick={() => navigate('contact')}><MessageCircle size={18}/> Hablar con Fulano</button></div><Fulano scene="phone"/></section>
   </main>
 }
 
