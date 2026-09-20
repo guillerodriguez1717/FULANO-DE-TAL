@@ -1874,3 +1874,25 @@ text-align:left
 .detail-measure h2{font-size:2.2rem;line-height:1}
 .detail-measure .secondary{width:100%;margin-top:20px}
 }
+
+
+/* Como comprar: confianza antes de la seña */
+.how-heading>div{max-width:780px}
+.how-fulano{max-width:650px;margin-top:20px;padding:13px 15px;background:#f3ead9;border-left:3px solid var(--terracotta);border-radius:0 10px 10px 0;font:500 .96rem/1.42 'Fraunces',serif;color:var(--charcoal)}
+.how-fulano b{display:block;margin-bottom:4px;font:800 .66rem/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--terracotta)}
+.how-fulano span{display:block}
+.how-steps-trust{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+.how-steps-trust article{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start;padding:24px!important;background:#fffdf8;border:1px solid rgba(41,39,34,.12);border-radius:14px}
+.how-steps-trust article>span{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--olive);color:white;font-weight:800}
+.how-steps-trust h2{margin:2px 0 7px!important;font-size:1.35rem!important}
+.how-steps-trust p{margin:0!important;line-height:1.5;color:var(--muted)}
+.before-paying{padding-top:50px!important;padding-bottom:60px!important;background:#efe2c8}
+.before-paying h2{margin:7px 0 24px;font-size:clamp(2.2rem,4vw,4rem)}
+.before-paying-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.before-paying-grid>div{padding:20px;background:rgba(255,253,248,.68);border:1px solid rgba(41,39,34,.1);border-radius:12px}
+.before-paying-grid svg{width:20px;margin-bottom:12px;color:var(--olive)}
+.before-paying-grid strong{display:block;margin-bottom:5px}
+.before-paying-grid p{margin:0;font-size:.88rem;line-height:1.45;color:var(--muted)}
+.process-note-trust .process-contact{margin-left:14px}
+@media(max-width:800px){.how-steps-trust{grid-template-columns:1fr 1fr!important}.before-paying-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.how-fulano{font-size:.9rem}.how-steps-trust{grid-template-columns:1fr!important}.how-steps-trust article{padding:20px!important}.before-paying-grid{grid-template-columns:1fr}.process-note-trust .process-contact{display:block;margin:14px 0 0}}
