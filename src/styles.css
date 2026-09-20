@@ -1258,3 +1258,127 @@ line-height:1.38!important;
 padding-top:11px!important;
 }
 }
+
+
+/* Muebles y algo más: misma lógica limpia que ambientes */
+.worlds-section .world-grid{
+align-items:stretch
+}
+.worlds-section .world-card{
+background:#fffdf8!important;
+border:1px solid rgba(41,39,34,.12)!important;
+border-radius:18px!important;
+overflow:hidden!important;
+box-shadow:0 8px 24px rgba(41,39,34,.05)!important
+}
+.worlds-section .world-image{
+height:auto!important;
+aspect-ratio:4/3!important;
+position:relative!important;
+overflow:hidden!important
+}
+.worlds-section .world-image::after{
+display:none!important;
+content:none!important
+}
+.worlds-section .world-image img{
+width:100%!important;
+height:100%!important;
+object-fit:cover!important;
+display:block!important
+}
+.worlds-section .world-image span{
+left:14px!important;
+bottom:14px!important;
+background:rgba(247,242,232,.94)!important;
+color:var(--charcoal)!important;
+border:1px solid rgba(41,39,34,.14)!important;
+border-radius:999px!important;
+padding:7px 10px!important;
+font-size:.66rem!important;
+letter-spacing:.08em!important
+}
+.worlds-section .world-body{
+padding:20px 20px 18px!important;
+min-height:0!important;
+display:flex!important;
+flex-direction:column!important
+}
+.worlds-section .world-body small{
+font-size:.64rem!important;
+letter-spacing:.11em!important;
+color:var(--terracotta)!important;
+font-weight:800!important
+}
+.worlds-section .world-body h3{
+margin:10px 0 8px!important;
+font-size:1.75rem!important;
+line-height:1.05!important;
+color:var(--charcoal)!important
+}
+.worlds-section .world-summary{
+margin:0!important;
+font-size:.9rem!important;
+line-height:1.4!important;
+color:rgba(41,39,34,.68)!important
+}
+.worlds-section .world-fulano{
+display:block!important;
+margin:14px 0 12px!important;
+padding:12px 13px!important;
+background:#f3ead9!important;
+border:0!important;
+border-left:3px solid var(--terracotta)!important;
+border-radius:0 10px 10px 0!important;
+font:500 .9rem/1.38 'Fraunces',serif!important;
+color:rgba(41,39,34,.9)!important
+}
+.worlds-section .world-fulano b{
+display:block!important;
+margin-bottom:4px!important;
+font:800 .66rem/1 system-ui,sans-serif!important;
+letter-spacing:.09em!important;
+text-transform:uppercase!important;
+color:var(--terracotta)!important
+}
+.worlds-section .world-fulano span{
+display:block!important
+}
+.worlds-section .world-cta{
+margin-top:auto!important;
+padding-top:12px!important;
+border-top:1px solid rgba(41,39,34,.09)!important;
+width:100%!important;
+justify-content:space-between!important
+}
+
+@media(max-width:600px){
+.worlds-section .world-grid{
+display:grid!important;
+grid-template-columns:1fr!important;
+gap:18px!important;
+overflow:visible!important;
+scroll-snap-type:none!important
+}
+.worlds-section .world-card{
+min-width:0!important;
+width:100%!important;
+border-radius:16px!important
+}
+.worlds-section .world-image{
+aspect-ratio:16/9!important
+}
+.worlds-section .world-body{
+padding:17px 18px 16px!important
+}
+.worlds-section .world-body h3{
+font-size:1.55rem!important
+}
+.worlds-section .world-summary{
+font-size:.88rem!important
+}
+.worlds-section .world-fulano{
+font-size:.88rem!important;
+padding:12px 13px!important
+}
+}
