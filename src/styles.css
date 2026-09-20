@@ -1033,3 +1033,150 @@ font-size:.86rem!important;
 line-height:1.35!important
 }
 }
+
+
+/* Tarjetas de ambientes: foto limpia arriba, contenido legible abajo */
+.category-card-clean{
+display:flex!important;
+flex-direction:column!important;
+align-items:stretch!important;
+text-align:left!important;
+padding:0!important;
+overflow:hidden!important;
+background:#fffdf8!important;
+border:1px solid rgba(41,39,34,.12)!important;
+border-radius:18px!important;
+box-shadow:0 8px 24px rgba(41,39,34,.06)!important;
+position:relative!important;
+min-height:100%!important
+}
+.category-card-clean::before,
+.category-card-clean::after{
+display:none!important;
+content:none!important
+}
+.category-card-clean .category-image{
+display:block!important;
+position:relative!important;
+width:100%!important;
+aspect-ratio:4/3!important;
+overflow:hidden!important;
+background:#e9e0d1!important
+}
+.category-card-clean .category-image img{
+position:absolute!important;
+inset:0!important;
+width:100%!important;
+height:100%!important;
+object-fit:cover!important;
+display:block!important;
+transform:none!important;
+filter:none!important
+}
+.category-card-clean .category-copy{
+position:static!important;
+inset:auto!important;
+display:flex!important;
+flex-direction:column!important;
+align-items:flex-start!important;
+gap:0!important;
+width:100%!important;
+min-height:0!important;
+padding:18px 18px 16px!important;
+background:#fffdf8!important;
+color:var(--charcoal)!important;
+text-shadow:none!important;
+transform:none!important
+}
+.category-card-clean .category-copy strong{
+order:1!important;
+display:block!important;
+margin:0!important;
+font:700 1.5rem/1.05 'Fraunces',serif!important;
+color:var(--charcoal)!important
+}
+.category-card-clean .category-copy small{
+order:2!important;
+display:block!important;
+margin:6px 0 0!important;
+font-size:.8rem!important;
+line-height:1.3!important;
+font-weight:700!important;
+letter-spacing:.025em!important;
+color:rgba(41,39,34,.65)!important;
+text-transform:none!important
+}
+.category-card-clean .fulano-says{
+order:3!important;
+display:block!important;
+width:100%!important;
+margin:14px 0 12px!important;
+padding:12px 13px!important;
+background:#f3ead9!important;
+border-left:3px solid var(--terracotta)!important;
+border-radius:0 10px 10px 0!important;
+font:500 .9rem/1.38 'Fraunces',serif!important;
+color:rgba(41,39,34,.9)!important
+}
+.category-card-clean .fulano-says b{
+display:block!important;
+margin-bottom:4px!important;
+font:800 .66rem/1 system-ui,sans-serif!important;
+letter-spacing:.09em!important;
+text-transform:uppercase!important;
+color:var(--terracotta)!important
+}
+.category-card-clean .fulano-says span{
+display:block!important
+}
+.category-card-clean .category-cta{
+order:4!important;
+display:flex!important;
+align-items:center!important;
+justify-content:space-between!important;
+width:100%!important;
+padding-top:12px!important;
+border-top:1px solid rgba(41,39,34,.09)!important;
+color:var(--olive)!important
+}
+.category-card-clean .category-cta em{
+font-style:normal!important;
+font-size:.8rem!important;
+font-weight:800!important;
+letter-spacing:.045em!important;
+text-transform:uppercase!important;
+color:var(--olive)!important
+}
+.category-card-clean .category-cta svg{
+width:18px!important;
+height:18px!important;
+position:static!important;
+opacity:1!important;
+color:var(--olive)!important
+}
+
+@media(max-width:600px){
+.category-section{
+padding-top:42px!important
+}
+.category-grid{
+gap:16px!important
+}
+.category-card-clean{
+border-radius:16px!important
+}
+.category-card-clean .category-image{
+aspect-ratio:16/10!important
+}
+.category-card-clean .category-copy{
+padding:16px!important
+}
+.category-card-clean .category-copy strong{
+font-size:1.42rem!important
+}
+.category-card-clean .fulano-says{
+font-size:.86rem!important;
+padding:11px 12px!important;
+margin:12px 0 10px!important
+}
+}
