@@ -9,14 +9,14 @@ export const products = [
 ]
 
 export const categories = [
-  { name: 'Living', subtitle: 'Sillones, racks y mesas', image: products[0].image, catalog: true },
-  { name: 'Comedor', subtitle: 'Mesas, sillas y guardado', image: products[1].image, catalog: true },
-  { name: 'Dormitorio', subtitle: 'Mesas de luz y guardado', image: products[3].image, catalog: true },
-  { name: 'Cocina', subtitle: 'Muebles y soluciones a pedido', image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85', catalog: false },
-  { name: 'Baño', subtitle: 'Vanitorys y guardado', image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=85', catalog: false },
-  { name: 'Oficina', subtitle: 'Escritorios y bibliotecas', image: products[4].image, catalog: true },
-  { name: 'Guardado', subtitle: 'Bibliotecas, módulos y más', image: products[5].image, catalog: true },
-  { name: 'A medida', subtitle: 'Contanos el espacio y lo vemos', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85', catalog: false },
+  { name: 'Living', subtitle: 'Sillones, racks y mesas', fulano: 'Para tirarse a ver el partido, una peli o charlar un rato. Que sea cómodo; después vemos la pinta.', image: products[0].image, catalog: true },
+  { name: 'Comedor', subtitle: 'Mesas, sillas y guardado', fulano: 'Que la mesa banque el asado, la picada y esas sobremesas que se estiran. Con eso ya arrancamos bien.', image: products[1].image, catalog: true },
+  { name: 'Dormitorio', subtitle: 'Mesas de luz, cómodas y placares', fulano: 'Acá no hace falta inventar la pólvora: que sea cómodo, ordenado y te deje descansar.', image: products[3].image, catalog: true },
+  { name: 'Cocina', subtitle: 'Soluciones prácticas', fulano: 'Que sirva de verdad y no te haga renegar. Después, si le dicen funcional, será por algo.', image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85', catalog: false },
+  { name: 'Baño', subtitle: 'Muebles funcionales', fulano: 'Chiquito o grande, siempre hay forma de acomodarlo sin meter la pata.', image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=85', catalog: false },
+  { name: 'Oficina', subtitle: 'Escritorios y bibliotecas', fulano: 'Si hay que laburar, por lo menos que el cuerpo no pase factura. Vemos algo cómodo y listo.', image: products[4].image, catalog: true },
+  { name: 'Guardado', subtitle: 'Módulos y organización', fulano: 'Cada cosa en su lugar y santo remedio. Te ayudo a encontrar dónde guardar todo eso.', image: products[5].image, catalog: true },
+  { name: 'A medida', subtitle: 'Contanos tu espacio', fulano: 'Si el hueco viene atravesado, no te hagas problema. Le buscamos la vuelta.', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85', catalog: false },
 ]
 
 export const formatPrice = (price) => `$ ${new Intl.NumberFormat('es-AR').format(price)}`
