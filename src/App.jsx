@@ -103,6 +103,57 @@ function ProductDetail({ product, navigate }) { const [color,setColor]=useState(
 
 function How({ navigate }) { return <main><section className="page-heading illustrated"><div><span className="eyebrow">Cómo comprar</span><h1>Fácil de explicar.<br/>Más fácil de hacer.</h1><p>Fulano trajo papeles y calculadora, pero en realidad son solo cuatro pasos.</p></div><Fulano scene="list"/></section><section className="section how-steps">{[['1','Elegís','Recorré el catálogo, revisá medidas y elegí tus variantes.'],['2','Confirmamos juntos','Nos escribís y verificamos producto, precio, plazo, pago y envío.'],['3','Lo pedimos','Con tu confirmación hacemos el pedido al proveedor especialmente para vos.'],['4','Te acompañamos','Te mantenemos al tanto y coordinamos la entrega cuando esté listo.']].map(x=><article key={x[0]}><span>{x[0]}</span><h2>{x[1]}</h2><p>{x[2]}</p></article>)}</section><section className="section process-note"><Fulano scene="box"/><div><span className="eyebrow">Compra acompañada</span><h2>“Bajo pedido” no significa a ciegas.</h2><p>Antes de avanzar vas a saber las condiciones aplicables. Preferimos confirmar bien cada detalle a prometer algo que no podemos cumplir.</p><button className="primary" onClick={()=>navigate('catalog')}>Elegir un mueble</button></div></section><FAQ/></main> }
 
+
+function Legal({ section='terms', navigate }) {
+  const sections = {
+    terms: {
+      eyebrow: 'Información legal',
+      title: 'Términos de compra',
+      body: <>
+        <p>Fulano de Tal trabaja principalmente bajo pedido. Antes de confirmar una compra se informa precio, disponibilidad, plazo estimado, forma de pago y modalidad de entrega aplicable.</p>
+        <p>Las condiciones particulares de cada operación se confirman antes de avanzar. Los derechos reconocidos por la normativa de defensa del consumidor no se consideran renunciados por estas condiciones.</p>
+        <p className="legal-placeholder"><strong>Antes de publicar:</strong> completar nombre o razón social del vendedor, CUIT, domicilio comercial/fiscal y canales formales de contacto.</p>
+      </>
+    },
+    returns: {
+      eyebrow: 'Información legal',
+      title: 'Cambios y devoluciones',
+      body: <>
+        <p>Los cambios, devoluciones y garantías se gestionan según el tipo de producto, su estado, las condiciones informadas en la compra y la normativa aplicable.</p>
+        <p>Los productos confeccionados conforme a especificaciones del cliente o claramente personalizados pueden quedar exceptuados del derecho de revocación cuando corresponda legalmente.</p>
+        <p>Si un producto llega con un inconveniente, escribinos para registrar el caso y coordinar los pasos a seguir.</p>
+      </>
+    },
+    privacy: {
+      eyebrow: 'Información legal',
+      title: 'Privacidad',
+      body: <>
+        <p>Los datos que compartas para realizar una consulta o compra se utilizan para responderte, preparar presupuestos, coordinar pedidos, pagos y entregas, y brindar atención vinculada a la operación.</p>
+        <p>No publicamos ni vendemos tus datos personales. Antes de habilitar formularios, pagos o herramientas de analítica, esta política deberá completarse con los proveedores utilizados y los canales para ejercer derechos sobre los datos.</p>
+      </>
+    },
+    withdrawal: {
+      eyebrow: 'Compras a distancia',
+      title: 'Botón de arrepentimiento',
+      body: <>
+        <p>Si realizaste una compra online y el derecho de revocación resulta aplicable, podés solicitar el arrepentimiento dentro del plazo legal correspondiente.</p>
+        <p>No hace falta registrarte ni realizar trámites adicionales para iniciar la solicitud. Los productos hechos conforme a tus especificaciones o claramente personalizados pueden encontrarse dentro de las excepciones legales.</p>
+        <button className="primary legal-action" onClick={() => navigate('contact')}>Solicitar arrepentimiento</button>
+        <p className="legal-note">Este acceso inicia el contacto. Antes de lanzar la tienda deberá vincularse a un canal que genere y conserve constancia de la solicitud.</p>
+      </>
+    }
+  }
+  const current = sections[section] || sections.terms
+  return <main className="legal-page">
+    <section className="page-heading">
+      <span className="eyebrow">{current.eyebrow}</span>
+      <h1>{current.title}</h1>
+      <p>Información clara, sin letra chica.</p>
+    </section>
+    <section className="section legal-content">{current.body}</section>
+  </main>
+}
+
 function About({ contact=false }) { return <main><section className="page-heading illustrated about-heading"><div><span className="eyebrow">{contact?'Contacto':'Nosotros'}</span><h1>{contact?'Fulano está del otro lado.':'Un nombre cualquiera. Una atención nada cualquiera.'}</h1><p>{contact?'Escribinos y contanos qué estás buscando. Te respondemos personalmente en el horario de atención.':'Fulano de Tal nace para hacer que elegir muebles sea más simple, cercano y transparente.'}</p>{contact&&<button className="primary" onClick={()=>openWhatsApp('Hola, quiero hacer una consulta sobre los muebles de Fulano de Tal.')}><MessageCircle/> Abrir WhatsApp</button>}</div><Fulano scene={contact?'phone':'hello'}/></section><section className="section story"><div><span className="eyebrow">Quién es Fulano</span><h2>Ese tipo confiable que siempre intenta darte una mano.</h2></div><div><p>No fabrica los muebles ni pretende saberlo todo. Es el personaje de la marca: amable, un poco tímido y dispuesto a buscar una respuesta cuando hace falta.</p><p>A veces se enreda con una cinta métrica. Otras, intenta levantar una caja demasiado grande. El chiste siempre cae sobre él, nunca sobre vos.</p><p className="placeholder-note">La ilustración actual es provisoria y será reemplazada por el personaje definitivo.</p></div></section>{!contact&&<section className="contact-strip"><div><span className="eyebrow">Hablemos</span><h2>¿En qué te damos una mano?</h2><p>Sin respuestas automáticas ni presión para comprar.</p><button className="primary" onClick={()=>openWhatsApp('Hola, quiero hacer una consulta.')}>Escribir por WhatsApp</button></div><Fulano scene="phone"/></section>}</main> }
 
-export default function App(){ const [page,setPage]=useState('home'); const [category,setCategory]=useState(''); const [product,setProduct]=useState(null); const navigate=(next,data)=>{setPage(next); if(next==='catalog')setCategory(data||''); setProduct(null); window.scrollTo(0,0)}; const openProduct=p=>{setProduct(p);setPage('product');window.scrollTo(0,0)}; useEffect(()=>{const onPop=()=>navigate('home');window.addEventListener('popstate',onPop);return()=>window.removeEventListener('popstate',onPop)},[]); return <><Header navigate={navigate} onSearch={()=>navigate('catalog')}/>{page==='home'&&<Home navigate={navigate} openProduct={openProduct}/>} {page==='catalog'&&<Catalog category={category} openProduct={openProduct}/>} {page==='product'&&product&&<ProductDetail product={product} navigate={navigate}/>} {page==='how'&&<How navigate={navigate}/>} {page==='about'&&<About/>} {page==='contact'&&<About contact/>}<Footer navigate={navigate}/></> }
+export default function App(){ const [page,setPage]=useState('home'); const [category,setCategory]=useState(''); const [legalSection,setLegalSection]=useState('terms'); const [product,setProduct]=useState(null); const navigate=(next,data)=>{setPage(next); if(next==='catalog')setCategory(data||''); if(next==='legal')setLegalSection(data||'terms'); setProduct(null); window.scrollTo(0,0)}; const openProduct=p=>{setProduct(p);setPage('product');window.scrollTo(0,0)}; useEffect(()=>{const onPop=()=>navigate('home');window.addEventListener('popstate',onPop);return()=>window.removeEventListener('popstate',onPop)},[]); return <><Header navigate={navigate} onSearch={()=>navigate('catalog')}/>{page==='home'&&<Home navigate={navigate} openProduct={openProduct}/>} {page==='catalog'&&<Catalog category={category} openProduct={openProduct}/>} {page==='product'&&product&&<ProductDetail product={product} navigate={navigate}/>} {page==='how'&&<How navigate={navigate}/>} {page==='about'&&<About/>} {page==='contact'&&<About contact/>} {page==='legal'&&<Legal section={legalSection} navigate={navigate}/>}<Footer navigate={navigate}/></> }
