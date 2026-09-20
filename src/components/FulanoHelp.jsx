@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { MessageCircle, ArrowRight } from 'lucide-react'
 import Fulano from './Fulano'
 
-export default function FulanoHelp({ title = '¿No sabés cuál elegir?', text = 'Fulano te da una mano.', scene = 'measure', questions = [] }) {
-  const [open, setOpen] = useState(false)
-  const [answer, setAnswer] = useState('')
-  return <aside className={`fulano-help ${open ? 'is-open' : ''}`}>
-    <Fulano scene={scene} />
-    <div><span className="eyebrow">Fulano te da una mano</span><h3>{title}</h3><p>{text}</p>
-      {open && <div className="help-options">{questions.map(q => <button key={q} className={answer === q ? 'selected' : ''} onClick={() => setAnswer(q)}>{q}</button>)}{answer && <p className="help-answer">Perfecto. Voy a mostrarte opciones pensando en “{answer}”.</p>}</div>}
-      {questions.length > 0 && <button className="text-button" onClick={() => setOpen(!open)}>{open ? 'Cerrar ayuda' : 'Ayudame a elegir →'}</button>}
+export default function FulanoHelp({
+  title = '¿Tenés una duda? Preguntale a Fulano.',
+  text = 'No hace falta tener todo resuelto. Contame qué estás buscando y lo vemos tranquilo.',
+  scene = 'list',
+  onContact
+}) {
+  return <aside className="fulano-help fulano-help-clean">
+    <div className="help-character"><Fulano scene={scene} /></div>
+    <div className="help-copy">
+      <span className="eyebrow">Un tipo que te da una mano</span>
+      <h3>{title}</h3>
+      <p>{text}</p>
+      <div className="help-fulano-line"><b>Fulano dice:</b><span>“Chiflame y lo vemos. Sin compromiso.”</span></div>
+      <button className="primary help-contact" onClick={onContact}>
+        <MessageCircle size={18}/> Hablar con Fulano <ArrowRight size={17}/>
+      </button>
+      <small>Consultas sobre muebles, medidas, pedidos especiales, tiempos y entrega.</small>
     </div>
   </aside>
 }
