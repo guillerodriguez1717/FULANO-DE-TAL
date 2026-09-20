@@ -29,7 +29,6 @@ export default function Header({ navigate, onSearch }) {
         <button className="menu-button" onClick={() => setMenu(true)} aria-label="Abrir menú"><Menu/><span>Menú</span></button>
       </div>
     </header>
-    <div className="legal-quickbar"><button onClick={() => navigate('legal', 'withdrawal')}>Botón de arrepentimiento</button><span>Compras online</span></div>
     <div className={searchOpen ? "mobile-search-panel open" : "mobile-search-panel"}>
       <form onSubmit={(e)=>{e.preventDefault(); onSearch(searchTerm); setSearchOpen(false)}}>
         <Search/>
