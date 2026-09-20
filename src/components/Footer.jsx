@@ -24,6 +24,6 @@ export default function Footer({ navigate }) {
       <p>Atención personalizada<br/>Pilar, Córdoba</p>
       <button className="footer-contact" onClick={() => navigate('contact')}>Hablar con Fulano →</button>
     </div>
-    <div className="footer-bottom">© 2026 Fulano de Tal · Sitio en preparación</div>
+    <div className="footer-bottom"><span>© 2026 Fulano de Tal · Sitio en preparación</span><span>Un tipo que te da una mano.</span></div>
   </footer>
 }
