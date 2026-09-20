@@ -1817,3 +1817,36 @@ font-size:.88rem;
 text-align:left
 }
 }
+
+
+/* Catalogo renovado */
+.catalog-heading{padding-bottom:32px!important}
+.catalog-heading>p{max-width:720px!important}
+.catalog-fulano{max-width:700px;margin-top:20px;padding:12px 14px;background:#f3ead9;border-left:3px solid var(--terracotta);border-radius:0 10px 10px 0;font:500 .94rem/1.42 'Fraunces',serif;color:var(--charcoal)}
+.catalog-fulano b{display:block;margin-bottom:4px;font:800 .66rem/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--terracotta)}
+.catalog-fulano span{display:block}
+.catalog-controls{padding:0 6vw 12px;display:grid;grid-template-columns:minmax(280px,430px) 1fr;gap:14px 28px;align-items:center}
+.catalog-search{display:flex;align-items:center;gap:10px;padding:0 15px;background:#fffdf8;border:1px solid rgba(41,39,34,.16);border-radius:12px}
+.catalog-search input{width:100%;padding:14px 0;border:0;outline:0;background:transparent;font:inherit;color:var(--charcoal)}
+.catalog-meta{justify-self:end;font-size:.82rem;color:rgba(41,39,34,.65)}
+.catalog-meta strong{color:var(--charcoal)}
+.catalog-controls .filters{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.catalog-controls .filters button{border:1px solid rgba(41,39,34,.18);background:#fffdf8;border-radius:999px;padding:9px 15px;white-space:nowrap}
+.catalog-controls .filters button.active{background:var(--olive);border-color:var(--olive);color:white}
+.catalog-empty{padding-top:40px!important}
+.catalog-help{margin:28px 6vw 90px;padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:30px;background:#efe2c8;border:1px solid rgba(41,39,34,.12);border-radius:18px}
+.catalog-help h2{max-width:720px;margin:7px 0 8px;font-size:clamp(2rem,3.2vw,3.3rem)}
+.catalog-help p{max-width:680px;margin:0;color:rgba(41,39,34,.72)}
+.catalog-help .primary{flex:0 0 auto}
+@media(max-width:700px){
+.catalog-heading{padding-bottom:25px!important}
+.catalog-fulano{font-size:.88rem;margin-top:16px}
+.catalog-controls{padding:0 5vw 8px;display:block}
+.catalog-meta{margin:10px 2px 12px}
+.catalog-controls .filters{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.catalog-controls .filters::-webkit-scrollbar{display:none}
+.catalog-grid{padding-top:18px!important}
+.catalog-help{margin:18px 5vw 60px;padding:25px 20px;display:block}
+.catalog-help h2{font-size:2rem;line-height:1.02}
+.catalog-help .primary{width:100%;margin-top:20px;justify-content:center}
+}
