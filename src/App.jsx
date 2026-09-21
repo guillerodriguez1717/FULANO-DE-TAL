@@ -14,12 +14,14 @@ const openWhatsApp = (message) => window.open(`https://wa.me/${WHATSAPP_NUMBER}?
 function SectionTitle({ eyebrow, title, text, action }) { return <div className="section-title"><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>{action}</div> }
 
 const newspaperNotices = [
-  'Envíos a todo el país · a cargo del cliente',
-  'Muebles a pedido',
-  'Atención personalizada',
-  'Ofertas por pedido',
+  'OFERTA DE LA SEMANA · Mirá las oportunidades bajo pedido',
+  'PRECIO ESPECIAL · Consultá promociones disponibles',
+  'Muebles a pedido · precio y plazo confirmados antes de avanzar',
+  'Mayorista para comercios · consultá condiciones',
   '¿Buscás algo especial? Preguntale a Fulano',
-  'Próximamente · Fulano agarró la bici y salió a investigar',
+  'NOVEDADES · Deco, bazar y cosas útiles para la casa',
+  'Fulano recomienda · medí dos veces y renegá ninguna',
+  'PRÓXIMAMENTE · Nuevos productos y rubros en camino',
 ]
 
 const heroTickerItems = [
