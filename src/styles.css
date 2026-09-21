@@ -2359,3 +2359,16 @@ object-position:42% bottom!important;
 .cart-empty{padding:34px 16px 56px}
 .cart-button b{right:-4px;top:-1px}
 }
+
+/* Changuito preparado para catálogo real */
+.cart-item-image{width:84px;height:84px;object-fit:cover;border:1px solid rgba(44,39,31,.14);background:#eee6d5}
+.cart-item-copy{display:grid;gap:3px}
+.cart-item-copy>span{font-size:.76rem;opacity:.75}
+.cart-item-copy>em{width:max-content;margin-top:3px;padding:3px 7px;border:1px solid rgba(44,39,31,.18);font-size:.62rem;font-style:normal;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.cart-consultation{margin:16px 0;padding:12px;background:rgba(255,255,255,.38);border:1px dashed rgba(44,39,31,.25)}
+.cart-consultation>small{font-weight:800}
+.cart-consultation pre,.contact-draft pre{white-space:pre-wrap;font:inherit;font-size:.75rem;line-height:1.45;margin:8px 0 0}
+.contact-draft{margin-bottom:28px;padding:22px;background:#eee3cb;border:1px solid rgba(44,39,31,.18)}
+.contact-draft h2{font-family:'Fraunces',Georgia,serif;margin:6px 0 10px}
+.contact-draft p{font-size:.76rem;opacity:.72;margin-bottom:0}
+@media(max-width:700px){.cart-item{grid-template-columns:68px 1fr auto}.cart-item-image{width:68px;height:68px}.cart-item-copy{min-width:0}.cart-remove{grid-column:2/-1}.cart-consultation pre{font-size:.7rem}}
