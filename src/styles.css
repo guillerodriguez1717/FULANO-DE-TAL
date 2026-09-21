@@ -2449,3 +2449,6 @@ object-position:42% bottom!important;
 .button-whatsapp-icon{display:inline-grid;place-items:center;width:19px;height:19px}
 .button-whatsapp-icon svg{display:block;width:19px;height:19px}
 .hero-whatsapp{display:inline-flex;align-items:center;gap:7px}
+
+.whatsapp-logo{display:grid;place-items:center;width:24px;height:24px;flex:0 0 24px}
+.whatsapp-logo svg{display:block;width:24px;height:24px;fill:currentColor}
