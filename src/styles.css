@@ -2436,3 +2436,6 @@ object-position:42% bottom!important;
 .filter-block .filters::-webkit-scrollbar{display:none}
 .filter-block .filters button{flex:0 0 auto}
 }
+
+.whatsapp-mark svg{display:block;width:24px;height:24px}
+.whatsapp-mark{transform:none!important}
