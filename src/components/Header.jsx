@@ -12,13 +12,13 @@ export default function Header({ navigate, onSearch }) {
   }
 
   return <>
-    <div className="topbar"><span>Fulano te da una mano</span><span className="topbar-detail">Atención personal · Consultanos por WhatsApp</span></div>
+    <div className="topbar"><span>Fulano te da una mano</span><span className="topbar-detail">Atención personal · Preguntale a Fulano</span></div>
     <header>
       <button className="mobile-menu-trigger" onClick={() => setMenu(true)} aria-label="Abrir menú"><Menu/><span>Menú</span></button>
       <button className="mobile-brand-button" onClick={() => navigate('home')} aria-label="Ir al inicio">Fulano de Tal</button>
       <Logo onClick={() => navigate('home')}/>
       <nav className={menu ? 'open' : ''} aria-label="Navegación principal">
-        <button onClick={() => goTo('catalog')}>Productos</button>
+        <button onClick={() => goTo('worlds')}>Productos</button>
         <button onClick={() => goTo('how')}>Cómo comprar</button>
         <button onClick={() => goTo('about')}>Nosotros</button>
         <button className="mobile-close" onClick={() => setMenu(false)} aria-label="Cerrar menú"><X/></button>
