@@ -1936,3 +1936,54 @@ text-align:left
 .about-order .fulano-art{max-width:320px;justify-self:center}
 @media(max-width:800px){.about-values-grid{grid-template-columns:1fr 1fr}.about-story,.about-order{grid-template-columns:1fr}.about-order .fulano-art{max-width:250px}}
 @media(max-width:600px){.about-fulano{font-size:.9rem}.about-story{gap:18px;padding-top:45px!important;padding-bottom:45px!important}.about-values-grid{grid-template-columns:1fr}.about-order{padding-top:45px!important;padding-bottom:45px!important}.about-order .fulano-art{max-width:210px}.about-contact{margin-top:0}}
+
+
+/* Hero escritorio: mostrar completa la ilustracion de Fulano */
+@media(min-width:901px){
+.hero.hero-integrated{
+display:grid!important;
+grid-template-columns:minmax(0,46%) minmax(0,54%)!important;
+grid-template-areas:"ticker ticker" "image copy"!important;
+align-items:stretch!important;
+padding:0 4vw 4vw!important;
+background:#f7f2e8!important
+}
+.hero-integrated .hero-mini-ticker{
+grid-area:ticker!important;
+margin:0 -4vw 28px!important;
+order:initial!important
+}
+.hero-integrated .hero-image.hero-fulano-welcome{
+grid-area:image!important;
+order:initial!important;
+margin:0!important;
+height:auto!important;
+min-height:0!important;
+max-height:none!important;
+border-radius:110px 4px 4px 4px!important;
+overflow:hidden!important;
+background:#efe2c8!important
+}
+.hero-integrated .hero-image.hero-fulano-welcome img{
+position:relative!important;
+inset:auto!important;
+width:100%!important;
+height:100%!important;
+min-height:0!important;
+object-fit:contain!important;
+object-position:center bottom!important;
+background:#efe2c8!important
+}
+.hero-integrated .hero-copy{
+grid-area:copy!important;
+order:initial!important;
+margin:0!important;
+padding:4vw 3vw!important;
+align-self:center!important;
+background:transparent!important
+}
+.hero-integrated h1{
+font-size:clamp(4rem,6vw,6.6rem)!important;
+line-height:.94!important
+}
+}
