@@ -153,7 +153,46 @@ function WorldPage({ worldId, navigate }) {
   </main>
 }
 
-function Catalog({ category, openProduct, navigate }) { const [query,setQuery]=useState(''); const [active,setActive]=useState(category||'Todos'); const categories=['Todos',...new Set(products.map(p=>p.category))]; const shown=useMemo(()=>products.filter(p=>{const q=query.trim().toLowerCase(); return (active==='Todos'||p.category===active)&&(!q||[p.name,p.category,p.description,p.material].filter(Boolean).some(v=>v.toLowerCase().includes(q)))}),[active,query]); const clear=()=>{setQuery('');setActive('Todos')}; return <main className="catalog-page"><section className="page-heading catalog-heading"><span className="eyebrow">Muebles bajo pedido</span><h1>Chusmeá tranquilo.</h1><p>Buscá por ambiente o por nombre. Antes de pedir, confirmamos con vos precio, disponibilidad, plazo y entrega.</p><div className="catalog-fulano"><b>Fulano dice:</b><span>Mirá sin apuro. Si algo te gusta pero no sabés si entra, lo medimos antes de hacer macanas.</span></div></section><section className="catalog-controls"><label className="catalog-search"><Search size={19}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="¿Qué estás buscando?"/></label><div className="catalog-meta"><strong>{shown.length}</strong> {shown.length===1?'producto':'productos'} {active!=='Todos'&&<>en <b>{active}</b></>}</div><div className="filters">{categories.map(c=><button className={active===c?'active':''} onClick={()=>setActive(c)} key={c}>{c}</button>)}</div></section>{shown.length?<div className="section product-grid catalog-grid">{shown.map(p=><ProductCard key={p.id} product={p} onOpen={openProduct}/>)}</div>:<div className="empty catalog-empty"><Fulano scene="search"/><h2>Fulano está buscando buenas cosas para mostrarte.</h2><p>La vidriera se va llenando con productos que tengan información clara y confirmada. Mientras tanto, podés contarnos qué estás buscando y le buscamos la vuelta.</p><div className="catalog-ready-list"><span>Precio y oferta</span><span>Medidas y materiales</span><span>Colores y variantes</span><span>Plazo y entrega</span><span>Proveedor y código</span><span>Oferta semanal</span></div>{(query||active!=='Todos')&&<button className="secondary" onClick={clear}>Limpiar búsqueda</button>}</div>}<section className="catalog-help"><div><span className="eyebrow">¿No encontraste lo que buscabas?</span><h2>No quiere decir que no lo podamos conseguir.</h2><p>Contanos qué necesitás, las medidas que tenés o mandanos una referencia. Fulano busca la vuelta.</p></div><button className="primary" onClick={()=>navigate('contact')}><MessageCircle size={18}/> Preguntale a Fulano</button></section></main> }
+function Catalog({ category, openProduct, navigate }) {
+  const [query,setQuery]=useState('')
+  const [active,setActive]=useState(category||'Todos')
+  const [world,setWorld]=useState('Todos')
+  const [fulfillment,setFulfillment]=useState('Todos')
+  const [sort,setSort]=useState('featured')
+  const categories=['Todos',...new Set(products.map(p=>p.category).filter(Boolean))]
+  const worlds=['Todos',...new Set(products.map(p=>p.world).filter(Boolean))]
+  const shown=useMemo(()=>{
+    const q=query.trim().toLowerCase()
+    const list=products.filter(p=>{
+      const haystack=[p.name,p.category,p.world,p.description,p.material,p.supplierCode,...(p.colors||[])].filter(Boolean).join(' ').toLowerCase()
+      return (active==='Todos'||p.category===active)&&(world==='Todos'||p.world===world)&&(fulfillment==='Todos'||(fulfillment==='stock'?p.fulfillment==='stock':p.fulfillment!=='stock'))&&(!q||haystack.includes(q))
+    })
+    return [...list].sort((a,b)=>{
+      if(sort==='price-asc') return (a.price??Infinity)-(b.price??Infinity)
+      if(sort==='price-desc') return (b.price??-1)-(a.price??-1)
+      if(sort==='name') return a.name.localeCompare(b.name,'es')
+      return Number(b.featured)-Number(a.featured)
+    })
+  },[active,world,fulfillment,sort,query])
+  const filtersOn=query||active!=='Todos'||world!=='Todos'||fulfillment!=='Todos'||sort!=='featured'
+  const clear=()=>{setQuery('');setActive('Todos');setWorld('Todos');setFulfillment('Todos');setSort('featured')}
+  return <main className="catalog-page">
+    <section className="page-heading catalog-heading"><span className="eyebrow">La vidriera de Fulano</span><h1>¿Qué andás buscando?</h1><p>Buscá por nombre, ambiente, material, color o código. Después afiná con los filtros.</p><div className="catalog-fulano"><b>Fulano dice:</b><span>Pispeá tranquilo. Si no aparece, preguntame; capaz está pero se hizo el distraído.</span></div></section>
+    <section className="catalog-controls catalog-controls-pro">
+      <label className="catalog-search"><Search size={19}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Ej.: mesa, placard, madera, negro…"/>{query&&<button aria-label="Borrar búsqueda" onClick={()=>setQuery('')}>×</button>}</label>
+      <div className="catalog-toolbar">
+        <div className="catalog-meta"><strong>{shown.length}</strong> {shown.length===1?'producto':'productos'} encontrados</div>
+        <label className="catalog-sort">Ordenar <select value={sort} onChange={e=>setSort(e.target.value)}><option value="featured">Destacados</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name">A–Z</option></select></label>
+      </div>
+      {worlds.length>1&&<div className="filter-block"><small>Universo</small><div className="filters">{worlds.map(x=><button className={world===x?'active':''} onClick={()=>setWorld(x)} key={x}>{x==='Todos'?'Todo':catalogWorlds.find(w=>w.id===x)?.name||x}</button>)}</div></div>}
+      {categories.length>1&&<div className="filter-block"><small>Categoría</small><div className="filters">{categories.map(x=><button className={active===x?'active':''} onClick={()=>setActive(x)} key={x}>{x}</button>)}</div></div>}
+      <div className="filter-block"><small>Modalidad</small><div className="filters"><button className={fulfillment==='Todos'?'active':''} onClick={()=>setFulfillment('Todos')}>Todas</button><button className={fulfillment==='order'?'active':''} onClick={()=>setFulfillment('order')}>Bajo pedido</button><button className={fulfillment==='stock'?'active':''} onClick={()=>setFulfillment('stock')}>Stock propio</button></div></div>
+      {filtersOn&&<button className="clear-filters" onClick={clear}>Limpiar filtros</button>}
+    </section>
+    {shown.length?<div className="section product-grid catalog-grid">{shown.map(p=><ProductCard key={p.id} product={p} onOpen={openProduct}/>)}</div>:<div className="empty catalog-empty"><Fulano scene="search"/><h2>{filtersOn?'No encontré nada con esos filtros.':'Fulano está buscando buenas cosas para mostrarte.'}</h2><p>{filtersOn?'Probá limpiando algún filtro o contanos qué necesitás y le buscamos la vuelta.':'La vidriera se va llenando solamente con productos que tengan información clara y confirmada.'}</p>{filtersOn&&<button className="secondary" onClick={clear}>Limpiar búsqueda y filtros</button>}</div>}
+    <section className="catalog-help"><div><span className="eyebrow">¿No encontraste lo que buscabas?</span><h2>No quiere decir que no lo podamos conseguir.</h2><p>Contanos qué necesitás, las medidas que tenés o mandanos una referencia. Fulano busca la vuelta.</p></div><button className="primary" onClick={()=>navigate('contact')}><MessageCircle size={18}/> Preguntale a Fulano</button></section>
+  </main>
+}
 
 function ProductDetail({ product, navigate, addToCart }) {
   const gallery=[product.image,...(product.gallery||[])].filter(Boolean)
