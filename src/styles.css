@@ -2219,3 +2219,15 @@ object-position:42% bottom!important;
 .hero-paper-ads .paper-ad-main blockquote{margin:9px 0 0;padding-top:7px;border-top:1px solid rgba(41,39,34,.22);font:600 italic .72rem/1.25 'Fraunces',serif;color:var(--charcoal)}
 .hero-paper-ads .paper-ad-main button{margin-top:9px!important}
 }
+
+
+/* Avisos rotativos de El Diario de Fulano */
+@media(min-width:901px){
+.paper-offer-rotator{animation:paperOfferIn .5s ease both;background:#f7f3e8!important;background-image:repeating-linear-gradient(0deg,rgba(45,39,31,.025) 0,rgba(45,39,31,.025) 1px,transparent 1px,transparent 4px)!important;border:2px solid rgba(44,39,31,.72)!important;box-shadow:inset 0 0 0 4px #f7f3e8,inset 0 0 0 5px rgba(44,39,31,.28),0 5px 15px rgba(45,36,24,.12)!important}
+.paper-offer-rotator>strong{font-family:'Fraunces',Georgia,serif!important;text-transform:uppercase;letter-spacing:-.02em}
+.paper-offer-footer{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.paper-offer-dots{display:flex;align-items:center;gap:6px;padding:0 3px 3px}
+.hero-paper-ads .paper-offer-dots button{width:7px!important;height:7px!important;min-width:7px!important;padding:0!important;margin:0!important;border:1px solid rgba(44,39,31,.65)!important;border-radius:50%!important;background:transparent!important;box-shadow:none!important}
+.hero-paper-ads .paper-offer-dots button.active{background:var(--terracotta)!important;border-color:var(--terracotta)!important}
+@keyframes paperOfferIn{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+}
