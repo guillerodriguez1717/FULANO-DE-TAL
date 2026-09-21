@@ -2251,3 +2251,18 @@ object-position:42% bottom!important;
 .mobile-offer-dots button{width:8px;height:8px;padding:0;border:1px solid rgba(44,39,31,.6);border-radius:50%;background:transparent}
 .mobile-offer-dots button.active{background:var(--terracotta);border-color:var(--terracotta)}
 }
+
+
+/* Catalogo listo para recibir productos reales */
+.catalog-coming-paper{max-width:760px;margin:24px auto 0;padding:22px;background:var(--cream,#f5efe2);border:1px solid rgba(44,39,31,.22);display:grid;gap:10px}
+.catalog-coming-paper b{font-family:'Fraunces',Georgia,serif}
+.catalog-coming-paper span{line-height:1.55}
+.catalog-coming-paper button{justify-self:start;margin-top:4px}
+.catalog-ready-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:680px;margin:18px auto}
+.catalog-ready-list span{padding:7px 10px;border:1px solid rgba(44,39,31,.22);background:#f6f1e5;font-size:.78rem;font-weight:700}
+@media(max-width:700px){
+.catalog-coming-paper{margin:18px 0 0;padding:16px}
+.catalog-coming-paper button{width:100%}
+.catalog-ready-list{gap:6px}
+.catalog-ready-list span{font-size:.7rem;padding:6px 8px}
+}
