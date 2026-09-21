@@ -2327,3 +2327,35 @@ object-position:42% bottom!important;
 
 /* El Changuito de Fulano */
 .cart-button{position:relative;display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer;padding:10px 7px}.cart-button svg{width:20px}.cart-button b{min-width:18px;height:18px;padding:0 4px;border-radius:20px;background:var(--rust);color:#fff;font-size:11px;display:grid;place-items:center}.cart-page{min-height:65vh}.cart-sheet{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:28px;align-items:start}.cart-list{display:grid;gap:12px}.cart-item{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:18px;border:1px solid rgba(50,40,30,.16);background:#fffdf7}.cart-item>div:first-child{display:grid;gap:4px}.cart-item small{opacity:.7}.cart-qty{display:flex;align-items:center;gap:10px}.cart-qty button{width:32px;height:32px;border:1px solid rgba(50,40,30,.25);background:#fff;cursor:pointer}.cart-remove{border:0;background:transparent;text-decoration:underline;cursor:pointer}.cart-summary{padding:24px;background:#eee6d5;border:1px solid rgba(50,40,30,.16)}.cart-summary .primary,.cart-summary .secondary{width:100%;margin-top:10px}.cart-empty{text-align:center}.cart-add-main{display:inline-flex;align-items:center;gap:8px;margin-right:10px}@media(max-width:700px){.cart-button span{display:none}.cart-button{padding:8px 4px}.cart-sheet{grid-template-columns:1fr}.cart-item{grid-template-columns:1fr auto}.cart-remove{grid-column:1/-1;text-align:left;padding:0}.cart-add-main{width:100%;justify-content:center;margin:0 0 10px}}
+
+
+/* Changuito · terminación visual Fulano */
+.cart-page .page-heading{position:relative;overflow:hidden;background:#f1e8d5;border-bottom:1px solid rgba(44,39,31,.18)}
+.cart-page .page-heading:after{content:'FULANO DE TAL · ALMACÉN DE COSAS ÚTILES';position:absolute;right:-18px;bottom:10px;font-family:'Fraunces',Georgia,serif;font-size:clamp(1rem,2.2vw,2rem);font-weight:800;letter-spacing:.04em;opacity:.055;transform:rotate(-3deg);white-space:nowrap}
+.cart-page .page-heading .eyebrow{letter-spacing:.14em}
+.cart-sheet{max-width:1180px;margin-left:auto;margin-right:auto}
+.cart-item{box-shadow:0 8px 24px rgba(44,39,31,.045)}
+.cart-item strong{font-family:'Fraunces',Georgia,serif;font-size:1.08rem}
+.cart-qty button{font-size:1.15rem;font-weight:800;border-radius:50%;transition:transform .15s ease,background .15s ease}
+.cart-qty button:hover{transform:translateY(-1px);background:#f1e8d5}
+.cart-remove{font-size:.76rem;opacity:.7}
+.cart-remove:hover{opacity:1}
+.cart-summary{position:sticky;top:96px;background:#eee3cb;box-shadow:0 10px 28px rgba(44,39,31,.06)}
+.cart-summary:before{content:'EL CHANGUITO';display:block;margin-bottom:10px;font-size:.66rem;font-weight:900;letter-spacing:.16em;opacity:.62}
+.cart-summary h2{font-family:'Fraunces',Georgia,serif;margin:0 0 8px;font-size:1.7rem}
+.cart-summary p{font-size:.86rem;line-height:1.55}
+.cart-empty{max-width:720px;margin:0 auto;padding-top:46px;padding-bottom:70px}
+.cart-empty:before{content:'🛒';display:block;font-size:3rem;margin-bottom:16px;filter:grayscale(1)}
+.cart-button{border-radius:999px;transition:background .15s ease}
+.cart-button:hover{background:rgba(44,39,31,.07)}
+.cart-button b{position:absolute;right:-1px;top:1px;box-shadow:0 0 0 2px #f7f1e5}
+@media(max-width:700px){
+.cart-page .page-heading{padding-bottom:34px}
+.cart-page .page-heading:after{font-size:.9rem;right:-60px;bottom:8px}
+.cart-sheet{padding-left:16px;padding-right:16px;gap:16px}
+.cart-item{padding:15px;gap:12px}
+.cart-summary{position:static;padding:20px}
+.cart-summary h2{font-size:1.45rem}
+.cart-empty{padding:34px 16px 56px}
+.cart-button b{right:-4px;top:-1px}
+}
