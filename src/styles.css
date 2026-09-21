@@ -2153,3 +2153,50 @@ color:#292722!important;
 opacity:.96!important
 }
 }
+
+
+/* El cielo del hero queda reservado a UNA oferta real */
+@media(min-width:901px){
+.hero-integrated .hero-image.hero-fulano-welcome .hero-paper-ads{
+top:4.5%!important;
+left:7%!important;
+right:7%!important;
+display:block!important
+}
+.hero-integrated .hero-image.hero-fulano-welcome .paper-ad-main{
+width:100%!important;
+min-height:150px!important;
+padding:18px 22px!important;
+transform:rotate(-.25deg)!important;
+background:rgba(247,242,232,.96)!important;
+border:1px solid rgba(41,39,34,.68)!important
+}
+.hero-paper-ads .paper-ad-main span{
+display:inline-block!important;
+padding:6px 9px!important;
+margin:0 0 10px!important;
+border:0!important;
+background:var(--terracotta)!important;
+color:#fffdf8!important;
+font-size:.62rem!important
+}
+.hero-paper-ads .paper-ad-main strong{
+font-size:clamp(1.35rem,2vw,2rem)!important;
+max-width:560px!important
+}
+.hero-paper-ads .paper-ad-main small{
+max-width:570px!important;
+font-size:.78rem!important
+}
+.hero-paper-ads .paper-ad-main button{
+pointer-events:auto!important;
+margin-top:12px!important;
+padding:9px 13px!important;
+border:0!important;
+background:var(--terracotta)!important;
+color:white!important;
+font-size:.74rem!important;
+font-weight:800!important;
+cursor:pointer!important
+}
+}
