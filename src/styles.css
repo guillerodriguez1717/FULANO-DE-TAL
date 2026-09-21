@@ -2459,3 +2459,5 @@ object-position:42% bottom!important;
 .whatsapp-float .whatsapp-logo svg circle,.whatsapp-float .whatsapp-logo svg path{opacity:1!important}
 
 .whatsapp-text-icon{display:inline-grid!important;place-items:center!important;width:25px!important;height:25px!important;min-width:25px!important;border:2px solid #fff!important;border-radius:50%!important;color:#fff!important;font:900 17px/1 Arial,sans-serif!important;box-sizing:border-box!important;position:static!important;margin:0!important;padding:0!important}
+
+.whatsapp-real-icon{font-size:18px!important;line-height:1!important;transform:rotate(-12deg)!important}
