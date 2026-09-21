@@ -2445,3 +2445,7 @@ object-position:42% bottom!important;
 .filters-preview-note span{opacity:.72}
 .catalog-controls-pro .filters button:disabled{cursor:default;opacity:.58}
 @media(max-width:700px){.filters-preview-note{align-items:flex-start;flex-direction:column;gap:4px}}
+
+.button-whatsapp-icon{display:inline-grid;place-items:center;width:19px;height:19px}
+.button-whatsapp-icon svg{display:block;width:19px;height:19px}
+.hero-whatsapp{display:inline-flex;align-items:center;gap:7px}
