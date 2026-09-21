@@ -159,8 +159,10 @@ function Catalog({ category, openProduct, navigate }) {
   const [world,setWorld]=useState('Todos')
   const [fulfillment,setFulfillment]=useState('Todos')
   const [sort,setSort]=useState('featured')
-  const categories=['Todos',...new Set(products.map(p=>p.category).filter(Boolean))]
-  const worlds=['Todos',...new Set(products.map(p=>p.world).filter(Boolean))]
+  const previewCategories=['Living','Comedor','Dormitorio','Cocina','Baño','Oficina','Guardado','A medida']
+  const categories=['Todos',...new Set(products.length?products.map(p=>p.category).filter(Boolean):previewCategories)]
+  const worlds=['Todos',...new Set(products.length?products.map(p=>p.world).filter(Boolean):catalogWorlds.map(w=>w.id))]
+  const previewMode=products.length===0
   const shown=useMemo(()=>{
     const q=query.trim().toLowerCase()
     const list=products.filter(p=>{
@@ -179,14 +181,15 @@ function Catalog({ category, openProduct, navigate }) {
   return <main className="catalog-page">
     <section className="page-heading catalog-heading"><span className="eyebrow">La vidriera de Fulano</span><h1>¿Qué andás buscando?</h1><p>Buscá por nombre, ambiente, material, color o código. Después afiná con los filtros.</p><div className="catalog-fulano"><b>Fulano dice:</b><span>Pispeá tranquilo. Si no aparece, preguntame; capaz está pero se hizo el distraído.</span></div></section>
     <section className="catalog-controls catalog-controls-pro">
+      {previewMode&&<div className="filters-preview-note"><b>Vista previa del catálogo</b><span>Estos filtros ya están preparados. Se activarán con los productos reales que vayamos cargando.</span></div>}
       <label className="catalog-search"><Search size={19}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Ej.: mesa, placard, madera, negro…"/>{query&&<button aria-label="Borrar búsqueda" onClick={()=>setQuery('')}>×</button>}</label>
       <div className="catalog-toolbar">
         <div className="catalog-meta"><strong>{shown.length}</strong> {shown.length===1?'producto':'productos'} encontrados</div>
         <label className="catalog-sort">Ordenar <select value={sort} onChange={e=>setSort(e.target.value)}><option value="featured">Destacados</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name">A–Z</option></select></label>
       </div>
-      {worlds.length>1&&<div className="filter-block"><small>Universo</small><div className="filters">{worlds.map(x=><button className={world===x?'active':''} onClick={()=>setWorld(x)} key={x}>{x==='Todos'?'Todo':catalogWorlds.find(w=>w.id===x)?.name||x}</button>)}</div></div>}
-      {categories.length>1&&<div className="filter-block"><small>Categoría</small><div className="filters">{categories.map(x=><button className={active===x?'active':''} onClick={()=>setActive(x)} key={x}>{x}</button>)}</div></div>}
-      <div className="filter-block"><small>Modalidad</small><div className="filters"><button className={fulfillment==='Todos'?'active':''} onClick={()=>setFulfillment('Todos')}>Todas</button><button className={fulfillment==='order'?'active':''} onClick={()=>setFulfillment('order')}>Bajo pedido</button><button className={fulfillment==='stock'?'active':''} onClick={()=>setFulfillment('stock')}>Stock propio</button></div></div>
+      {worlds.length>1&&<div className="filter-block"><small>Universo</small><div className="filters">{worlds.map(x=><button className={world===x?'active':''} onClick={()=>!previewMode&&setWorld(x)} disabled={previewMode} key={x}>{x==='Todos'?'Todo':catalogWorlds.find(w=>w.id===x)?.name||x}</button>)}</div></div>}
+      {categories.length>1&&<div className="filter-block"><small>Categoría</small><div className="filters">{categories.map(x=><button className={active===x?'active':''} onClick={()=>!previewMode&&setActive(x)} disabled={previewMode} key={x}>{x}</button>)}</div></div>}
+      <div className="filter-block"><small>Modalidad</small><div className="filters"><button className={fulfillment==='Todos'?'active':''} onClick={()=>!previewMode&&setFulfillment('Todos')} disabled={previewMode}>Todas</button><button className={fulfillment==='order'?'active':''} onClick={()=>!previewMode&&setFulfillment('order')} disabled={previewMode}>Bajo pedido</button><button className={fulfillment==='stock'?'active':''} onClick={()=>!previewMode&&setFulfillment('stock')} disabled={previewMode}>Stock propio</button></div></div>
       {filtersOn&&<button className="clear-filters" onClick={clear}>Limpiar filtros</button>}
     </section>
     {shown.length?<div className="section product-grid catalog-grid">{shown.map(p=><ProductCard key={p.id} product={p} onOpen={openProduct}/>)}</div>:<div className="empty catalog-empty"><Fulano scene="search"/><h2>{filtersOn?'No encontré nada con esos filtros.':'Fulano está buscando buenas cosas para mostrarte.'}</h2><p>{filtersOn?'Probá limpiando algún filtro o contanos qué necesitás y le buscamos la vuelta.':'La vidriera se va llenando solamente con productos que tengan información clara y confirmada.'}</p>{filtersOn&&<button className="secondary" onClick={clear}>Limpiar búsqueda y filtros</button>}</div>}
