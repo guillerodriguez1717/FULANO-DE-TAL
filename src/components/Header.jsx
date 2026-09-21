@@ -1,8 +1,8 @@
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { useState } from 'react'
 import Logo from './Logo'
 
-export default function Header({ navigate, onSearch }) {
+export default function Header({ navigate, onSearch, cartCount = 0 }) {
   const [menu, setMenu] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
@@ -24,7 +24,7 @@ export default function Header({ navigate, onSearch }) {
         <button className="mobile-close" onClick={() => setMenu(false)} aria-label="Cerrar menú"><X/></button>
       </nav>
       <div className="header-actions">
-        <button className="search-button" aria-label="Buscar productos" onClick={() => setSearchOpen(v => !v)}><Search/><span>Buscar</span></button>
+        <button className="search-button" aria-label="Buscar productos" onClick={() => setSearchOpen(v => !v)}><Search/><span>Buscar</span></button><button className="cart-button" onClick={() => navigate('cart')} aria-label={`El changuito de Fulano, ${cartCount} productos`}><ShoppingCart/><span>Changuito</span>{cartCount>0&&<b>{cartCount}</b>}</button>
         <button className="whatsapp" onClick={() => navigate('contact')}>Hablemos</button>
         <button className="menu-button" onClick={() => setMenu(true)} aria-label="Abrir menú"><Menu/><span>Menú</span></button>
       </div>
