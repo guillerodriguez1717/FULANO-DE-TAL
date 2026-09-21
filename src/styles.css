@@ -1914,3 +1914,25 @@ text-align:left
 .contact-channel p{max-width:650px;margin:5px 0 0;color:var(--muted)}
 .contact-pending{padding:7px 11px;border:1px solid rgba(41,39,34,.2);border-radius:999px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
 @media(max-width:650px){.contact-fulano{font-size:.9rem}.contact-guide-grid{grid-template-columns:1fr}.contact-channel{align-items:flex-start;flex-direction:column}.contact-guide{padding-bottom:55px!important}}
+
+
+/* Nosotros: identidad de marca + confianza */
+.about-heading-brand>div{max-width:790px}
+.about-fulano{max-width:650px;margin-top:20px;padding:13px 15px;background:#f3ead9;border-left:3px solid var(--terracotta);border-radius:0 10px 10px 0;font:500 .96rem/1.42 'Fraunces',serif;color:var(--charcoal)}
+.about-fulano b{display:block;margin-bottom:4px;font:800 .66rem/1 system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--terracotta)}
+.about-story{display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;padding-top:65px!important;padding-bottom:65px!important}
+.about-story h2,.about-values h2,.about-order h2{margin:7px 0 12px;font-size:clamp(2.2rem,4vw,4rem);line-height:1.02}
+.about-story p{font-size:1rem;line-height:1.65;color:var(--muted)}
+.about-story strong{color:var(--charcoal)}
+.about-values{padding-top:55px!important;padding-bottom:65px!important;background:#efe2c8}
+.about-values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.about-values-grid article{padding:21px;background:rgba(255,253,248,.72);border:1px solid rgba(41,39,34,.1);border-radius:12px}
+.about-values-grid svg{width:21px;margin-bottom:15px;color:var(--olive)}
+.about-values-grid strong{display:block;margin-bottom:7px}
+.about-values-grid p{margin:0;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.about-order{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:7vw;padding-top:65px!important;padding-bottom:65px!important}
+.about-order p{max-width:760px;line-height:1.65;color:var(--muted)}
+.about-order .secondary{margin-top:10px}
+.about-order .fulano-art{max-width:320px;justify-self:center}
+@media(max-width:800px){.about-values-grid{grid-template-columns:1fr 1fr}.about-story,.about-order{grid-template-columns:1fr}.about-order .fulano-art{max-width:250px}}
+@media(max-width:600px){.about-fulano{font-size:.9rem}.about-story{gap:18px;padding-top:45px!important;padding-bottom:45px!important}.about-values-grid{grid-template-columns:1fr}.about-order{padding-top:45px!important;padding-bottom:45px!important}.about-order .fulano-art{max-width:210px}.about-contact{margin-top:0}}
