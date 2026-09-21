@@ -2467,3 +2467,6 @@ object-position:42% bottom!important;
 .wa-official{display:inline-block!important;width:24px!important;height:24px!important;min-width:24px!important;position:static!important;overflow:visible!important;line-height:0!important}
 .wa-official svg{display:block!important;position:static!important;float:none!important;width:24px!important;height:24px!important;margin:0!important;transform:none!important;opacity:1!important;overflow:visible!important}
 .wa-official svg path{fill:#fff!important;opacity:1!important}
+
+/* fallback estable: sin SVG para evitar reglas heredadas */
+.whatsapp-stable-icon{display:inline-grid!important;place-items:center!important;width:24px!important;height:24px!important;min-width:24px!important;border:2px solid #fff!important;border-radius:50%!important;color:#fff!important;background:transparent!important;font:900 12px/1 Arial,sans-serif!important;position:static!important;margin:0!important;padding:0!important;box-sizing:border-box!important}
