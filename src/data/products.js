@@ -31,6 +31,8 @@ export const productTemplate = {
   leadTime: '',
   shipping: '',
   payment: '',
+  fulfillment: 'order', // order | stock
+  stock: null,
   featured: false,
   weeklyOffer: false,
   offerStart: '',
