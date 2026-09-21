@@ -38,7 +38,10 @@ const heroTickerItems = [
 
 function NewspaperTicker() {
   const loop = [...newspaperNotices, ...newspaperNotices]
-  return <section className="newspaper-ticker" aria-label="Novedades de Fulano de Tal"><div className="ticker-track">{loop.map((notice, i) => <div className="ticker-notice" key={i}><span>EDICIÓN ESPECIAL</span><strong>{notice}</strong><b>✦</b></div>)}</div></section>
+  return <section className="newspaper-ticker newspaper-desk" aria-label="Ofertas y novedades de Fulano de Tal">
+    <div className="paper-masthead"><span>EL DIARIO DE FULANO</span><b>Ofertas · novedades · datos útiles</b><em>Edición del día</em></div>
+    <div className="ticker-track">{loop.map((notice, i) => <div className="ticker-notice" key={i}><span>{i%4===0?'OFERTA':i%4===1?'ÚLTIMO MOMENTO':i%4===2?'AVISO':'FULANO INFORMA'}</span><strong>{notice}</strong><b>✦</b></div>)}</div>
+  </section>
 }
 
 const shopWorlds = [
