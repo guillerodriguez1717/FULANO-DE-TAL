@@ -2200,3 +2200,11 @@ font-weight:800!important;
 cursor:pointer!important
 }
 }
+
+
+/* Ajuste fino escritorio: desplazar la ilustracion principal hacia la izquierda */
+@media(min-width:901px){
+.hero-integrated .hero-image.hero-fulano-welcome>img{
+object-position:42% bottom!important;
+}
+}
