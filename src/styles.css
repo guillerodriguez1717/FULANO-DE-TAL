@@ -2118,3 +2118,38 @@ font:500 clamp(.65rem,.78vw,.78rem)/1.3 'Fraunces',serif
 }
 }
 @media(max-width:900px){.hero-paper-ads{display:none!important}}
+
+
+/* Fix: los avisos deben ocupar el cielo beige de la ilustracion */
+@media(min-width:901px){
+.hero-integrated .hero-image.hero-fulano-welcome{
+position:relative!important
+}
+.hero-integrated .hero-image.hero-fulano-welcome .hero-paper-ads{
+position:absolute!important;
+z-index:20!important;
+top:7%!important;
+left:7%!important;
+right:7%!important;
+height:auto!important;
+display:grid!important;
+grid-template-columns:1.12fr .88fr!important;
+gap:14px!important;
+opacity:1!important;
+visibility:visible!important;
+overflow:visible!important;
+pointer-events:none!important
+}
+.hero-integrated .hero-image.hero-fulano-welcome .paper-ad{
+display:block!important;
+position:relative!important;
+z-index:21!important;
+min-height:112px!important;
+padding:15px 17px!important;
+background:#f7f2e8!important;
+border:1px solid rgba(41,39,34,.68)!important;
+box-shadow:4px 4px 0 rgba(41,39,34,.12)!important;
+color:#292722!important;
+opacity:.96!important
+}
+}
