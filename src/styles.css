@@ -1987,3 +1987,48 @@ font-size:clamp(4rem,6vw,6.6rem)!important;
 line-height:.94!important
 }
 }
+
+
+/* Escritorio: cinta editorial estilo avisos de diario */
+@media(min-width:901px){
+.hero-integrated>.newspaper-ticker{
+grid-area:ticker!important;
+display:block!important;
+margin:0 -4vw 28px!important;
+overflow:hidden!important;
+background:#ead9b8!important;
+border-top:1px solid rgba(41,39,34,.12)!important;
+border-bottom:1px solid rgba(41,39,34,.18)!important;
+padding:0!important
+}
+.hero-integrated>.hero-mini-ticker{display:none!important}
+.hero-integrated>.newspaper-ticker .ticker-track{
+display:flex!important;
+width:max-content!important;
+animation:fulano-paper-desk 42s linear infinite!important
+}
+.hero-integrated>.newspaper-ticker .ticker-notice{
+display:grid!important;
+grid-template-columns:auto auto auto!important;
+align-items:center!important;
+gap:12px!important;
+min-height:48px!important;
+padding:0 22px!important;
+border-right:1px solid rgba(41,39,34,.18)!important;
+white-space:nowrap!important
+}
+.hero-integrated>.newspaper-ticker .ticker-notice span{
+font:800 .62rem/1 system-ui,sans-serif!important;
+letter-spacing:.11em!important;
+color:var(--terracotta)!important
+}
+.hero-integrated>.newspaper-ticker .ticker-notice strong{
+font:700 .88rem/1.1 'Fraunces',serif!important;
+color:var(--charcoal)!important
+}
+.hero-integrated>.newspaper-ticker .ticker-notice b{color:var(--olive)!important}
+@keyframes fulano-paper-desk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+}
+@media(max-width:900px){
+.hero-integrated>.newspaper-ticker{display:none!important}
+}
