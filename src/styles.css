@@ -2208,3 +2208,14 @@ cursor:pointer!important
 object-position:42% bottom!important;
 }
 }
+
+
+/* Bajada editorial de las ofertas semanales */
+@media(min-width:901px){
+.hero-paper-ads .paper-ad-main{min-height:166px!important}
+.paper-ad-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px;border-bottom:3px double rgba(41,39,34,.45)}
+.hero-paper-ads .paper-ad-kicker span{margin:0 0 7px!important}
+.paper-ad-kicker em{font:600 .67rem/1 'Fraunces',serif;color:var(--charcoal)}
+.hero-paper-ads .paper-ad-main blockquote{margin:9px 0 0;padding-top:7px;border-top:1px solid rgba(41,39,34,.22);font:600 italic .72rem/1.25 'Fraunces',serif;color:var(--charcoal)}
+.hero-paper-ads .paper-ad-main button{margin-top:9px!important}
+}
