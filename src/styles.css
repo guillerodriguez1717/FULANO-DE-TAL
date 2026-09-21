@@ -2416,3 +2416,23 @@ object-position:42% bottom!important;
 .whatsapp-mark{display:grid;place-items:center;width:34px;height:34px;border:2px solid currentColor;border-radius:50%;font-size:1rem;transform:rotate(-18deg)}
 .whatsapp-label{white-space:nowrap}
 @media(max-width:700px){.whatsapp-float{right:14px;bottom:14px;width:54px;height:54px;padding:0;justify-content:center}.whatsapp-mark{width:34px;height:34px}.whatsapp-label{display:none}}
+
+/* Buscador y filtros profesionales */
+.catalog-controls-pro{display:grid;gap:15px}
+.catalog-search{position:relative}
+.catalog-search input{padding-right:42px}
+.catalog-search>button{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;border-radius:50%;background:rgba(44,39,31,.08);font-size:1.2rem;cursor:pointer}
+.catalog-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.catalog-sort{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:800}
+.catalog-sort select{border:1px solid rgba(44,39,31,.2);background:#faf6ed;padding:9px 30px 9px 10px;font:inherit;color:inherit}
+.filter-block{display:grid;gap:7px}
+.filter-block>small{text-transform:uppercase;letter-spacing:.12em;font-size:.61rem;font-weight:900;opacity:.58}
+.clear-filters{justify-self:start;border:0;background:none;padding:0;color:inherit;text-decoration:underline;font-size:.72rem;font-weight:800;cursor:pointer}
+@media(max-width:700px){
+.catalog-toolbar{align-items:flex-start;flex-direction:column}
+.catalog-sort{width:100%;justify-content:space-between}
+.catalog-sort select{max-width:190px}
+.filter-block .filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.filter-block .filters::-webkit-scrollbar{display:none}
+.filter-block .filters button{flex:0 0 auto}
+}
