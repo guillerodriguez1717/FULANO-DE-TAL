@@ -2439,3 +2439,9 @@ object-position:42% bottom!important;
 
 .whatsapp-mark svg{display:block;width:24px;height:24px}
 .whatsapp-mark{transform:none!important}
+
+.filters-preview-note{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px dashed rgba(44,39,31,.28);background:#f4eddf;font-size:.72rem}
+.filters-preview-note b{white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
+.filters-preview-note span{opacity:.72}
+.catalog-controls-pro .filters button:disabled{cursor:default;opacity:.58}
+@media(max-width:700px){.filters-preview-note{align-items:flex-start;flex-direction:column;gap:4px}}
