@@ -2524,3 +2524,18 @@ object-position:42% bottom!important;
 .mini-fulano-helper{align-self:flex-start}
 .order-fulano-corner{width:82px;right:8px;bottom:-10px;opacity:.35}
 }
+
+
+/* Mini Fulano v2 · más visible y con presencia de personaje */
+.mini-fulano-helper{position:relative;min-width:285px;padding:13px 18px 13px 98px;border-radius:18px;background:#fffaf0;border:1px solid rgba(79,64,47,.24);box-shadow:0 12px 28px rgba(44,39,31,.10)}
+.mini-fulano-helper .fulano-art{position:absolute;left:8px;bottom:0;width:86px;height:86px;margin:0;color:#493d31;filter:drop-shadow(0 5px 5px rgba(44,39,31,.12))}
+.mini-fulano-helper span{max-width:190px;gap:4px}
+.mini-fulano-helper b{font-size:.9rem;line-height:1.05}
+.mini-fulano-helper small{font-size:.72rem;line-height:1.35}
+.order-fulano-corner{width:160px;right:clamp(16px,4vw,58px);bottom:-20px;opacity:1}
+.order-fulano-corner .fulano-art{filter:drop-shadow(0 8px 8px rgba(0,0,0,.14))}
+@media(max-width:900px){
+.mini-fulano-helper{min-width:0;width:100%;max-width:360px;padding-left:92px}
+.mini-fulano-helper .fulano-art{width:80px;height:80px}
+.order-fulano-corner{width:108px;opacity:.72}
+}
