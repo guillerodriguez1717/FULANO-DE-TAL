@@ -2651,3 +2651,27 @@ margin:0!important
   background-color:#ead9ba!important;
 }
 .order-real-fulano img{display:none!important}
+
+
+/* Ajuste final: Fulano con metro visible y protagonista */
+.contextual-heading{max-width:none!important;display:grid!important;grid-template-columns:minmax(0,1fr) 430px!important;align-items:end!important;gap:44px!important}
+.contextual-heading .mini-fulano-helper{
+  width:430px!important;min-height:190px!important;padding:26px 28px 26px 205px!important;
+  align-self:end!important;border-radius:28px 28px 28px 8px!important;overflow:visible!important;
+}
+.contextual-heading .mini-fulano-photo{
+  left:8px!important;bottom:0!important;width:190px!important;height:205px!important;
+  border-radius:0!important;background-color:transparent!important;
+  background-size:contain!important;background-position:center bottom!important;
+}
+.contextual-heading .mini-fulano-helper>span:last-child{max-width:200px!important}
+.contextual-heading .mini-fulano-helper b{font-size:1.18rem!important}
+.contextual-heading .mini-fulano-helper small{font-size:.9rem!important;line-height:1.35!important}
+@media(max-width:1050px){
+ .contextual-heading{grid-template-columns:1fr!important;gap:22px!important}
+ .contextual-heading .mini-fulano-helper{width:min(100%,430px)!important}
+}
+@media(max-width:600px){
+ .contextual-heading .mini-fulano-helper{min-height:135px!important;padding:20px 18px 20px 135px!important}
+ .contextual-heading .mini-fulano-photo{width:125px!important;height:145px!important}
+}
