@@ -2723,3 +2723,24 @@ margin:0!important
  width:100%!important;height:100%!important;object-fit:cover!important;
  object-position:center center!important;display:block!important;
 }
+
+
+/* Final hero layout: artwork is a wide banner, never a tall cropped panel */
+.hero-integrated{
+  grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr)!important;
+  min-height:auto!important;
+  align-items:center!important;
+}
+.hero-integrated .hero-image.hero-fulano-welcome{
+  min-height:0!important;height:auto!important;aspect-ratio:2.05/1!important;
+  border-radius:26px!important;align-self:center!important;overflow:hidden!important;
+}
+.hero-integrated .hero-image.hero-fulano-welcome>img{
+  width:100%!important;height:100%!important;object-fit:contain!important;
+  object-position:center!important;background:#eadfc9!important;
+}
+.hero-integrated .hero-image.hero-fulano-welcome .hero-paper-ads{display:none!important}
+@media(max-width:900px){
+ .hero-integrated{grid-template-columns:1fr!important}
+ .hero-integrated .hero-image.hero-fulano-welcome{aspect-ratio:2.05/1!important;margin:24px 4vw 0!important}
+}
