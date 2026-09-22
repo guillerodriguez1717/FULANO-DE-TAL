@@ -2819,3 +2819,113 @@ margin:0!important
   .category-section .category-card-clean .category-image{aspect-ratio:16/9!important}
   .category-section .category-card-clean .category-copy small{min-height:0}
 }
+
+
+/* Muebles y algo más: accesos visuales a cada sector */
+.worlds-section{
+  background:#fffdf8!important;
+}
+.worlds-section .world-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:22px!important;
+}
+.worlds-section .world-card{
+  display:grid!important;
+  grid-template-columns:44% 56%!important;
+  min-height:310px!important;
+  border:1px solid rgba(41,39,34,.14)!important;
+  border-radius:18px!important;
+  background:#f8f1e5!important;
+  overflow:hidden!important;
+  box-shadow:0 10px 28px rgba(48,38,28,.07)!important;
+}
+.worlds-section .world-image{
+  aspect-ratio:auto!important;
+  height:100%!important;
+  min-height:310px!important;
+}
+.worlds-section .world-image img{
+  transition:transform .35s ease!important;
+}
+.worlds-section .world-image span{
+  top:16px!important;
+  bottom:auto!important;
+  left:16px!important;
+  padding:7px 10px!important;
+  border-radius:30px!important;
+  background:#f7f2e8!important;
+  color:#3f513f!important;
+  font-size:.68rem!important;
+  font-weight:800!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+.worlds-section .world-body{
+  display:flex!important;
+  flex-direction:column!important;
+  padding:25px 25px 22px!important;
+}
+.worlds-section .world-body>small{
+  color:var(--terracotta)!important;
+  font-size:.68rem!important;
+  font-weight:800!important;
+  letter-spacing:.12em!important;
+}
+.worlds-section .world-body h3{
+  margin:12px 0 9px!important;
+  font-size:clamp(1.65rem,2vw,2.15rem)!important;
+}
+.worlds-section .world-summary{
+  margin:0 0 15px!important;
+  color:var(--muted)!important;
+}
+.worlds-section .world-fulano{
+  margin:auto 0 15px!important;
+  padding:11px 12px!important;
+  background:#efe4d3!important;
+  border-left:3px solid var(--terracotta)!important;
+  border-radius:0 7px 7px 0!important;
+  font-size:.84rem!important;
+  line-height:1.35!important;
+}
+.worlds-section .world-fulano b{
+  display:block!important;
+  color:var(--terracotta)!important;
+  margin-bottom:3px!important;
+}
+.worlds-section .world-cta{
+  width:100%!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  padding:11px 0 0!important;
+  border-top:1px solid rgba(41,39,34,.12)!important;
+  color:var(--olive)!important;
+}
+.worlds-section .world-card:hover{
+  transform:translateY(-5px)!important;
+  box-shadow:0 18px 38px rgba(48,38,28,.12)!important;
+}
+.worlds-section .world-card:hover .world-image img{
+  transform:scale(1.035)!important;
+}
+@media(max-width:900px){
+  .worlds-section .world-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:600px){
+  .worlds-section .world-grid{
+    display:grid!important;
+    overflow:visible!important;
+    gap:16px!important;
+  }
+  .worlds-section .world-card{
+    min-width:0!important;
+    grid-template-columns:1fr!important;
+  }
+  .worlds-section .world-image{
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+  }
+  .worlds-section .world-body{padding:19px 18px 17px!important}
+}
