@@ -2929,3 +2929,76 @@ margin:0!important
   }
   .worlds-section .world-body{padding:19px 18px 17px!important}
 }
+
+
+/* Cómo comprar en Home: proceso bajo pedido claro y visual */
+.order-section-fulano{
+  position:relative!important;
+  overflow:hidden!important;
+  grid-template-columns:.9fr 1.35fr!important;
+  gap:7vw!important;
+  background:linear-gradient(135deg,#354635 0%,#465a45 100%)!important;
+}
+.order-section-fulano::after{
+  content:'FULANO DE TAL';
+  position:absolute;
+  right:-18px;
+  bottom:-24px;
+  font:700 clamp(4rem,10vw,9rem)/1 'Fraunces',serif;
+  letter-spacing:-.05em;
+  color:rgba(255,255,255,.035);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.order-section-fulano .order-intro{position:relative;z-index:1}
+.order-section-fulano .order-intro h2{margin-bottom:20px}
+.order-section-fulano .order-intro>p{font-size:1.06rem;line-height:1.65}
+.order-promise{
+  margin:25px 0 4px;
+  padding:14px 16px;
+  border-left:3px solid #e3bd67;
+  background:rgba(255,255,255,.07);
+}
+.order-promise b,.order-promise span{display:block}
+.order-promise b{font:600 1.08rem 'Fraunces',serif;color:#fff}
+.order-promise span{margin-top:3px;color:rgba(255,255,255,.68);font-size:.88rem}
+.order-steps-flow{
+  position:relative;
+  z-index:1;
+  counter-reset:flow;
+}
+.order-steps-flow .order-step{
+  position:relative;
+  grid-template-columns:58px 1fr!important;
+  padding:20px 0!important;
+}
+.order-steps-flow .order-step>span{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(227,189,103,.55);
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+  font-size:.82rem!important;
+  font-weight:800;
+}
+.order-steps-flow .order-step:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  left:21px;
+  bottom:-10px;
+  width:1px;
+  height:20px;
+  background:rgba(227,189,103,.45);
+}
+.order-steps-flow .order-step h3{margin:0 0 4px!important}
+.order-steps-flow .order-step p{max-width:520px}
+@media(max-width:900px){
+  .order-section-fulano{grid-template-columns:1fr!important;gap:42px!important}
+}
+@media(max-width:600px){
+  .order-section-fulano{padding:70px 7vw!important}
+  .order-steps-flow .order-step{grid-template-columns:50px 1fr!important;padding:18px 0!important}
+  .order-section-fulano::after{font-size:4.3rem;bottom:-8px}
+}
