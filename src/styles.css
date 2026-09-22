@@ -2470,3 +2470,35 @@ object-position:42% bottom!important;
 
 /* fallback estable: sin SVG para evitar reglas heredadas */
 .whatsapp-stable-icon{display:inline-grid!important;place-items:center!important;width:24px!important;height:24px!important;min-width:24px!important;border:2px solid #fff!important;border-radius:50%!important;color:#fff!important;background:transparent!important;font:900 12px/1 Arial,sans-serif!important;position:static!important;margin:0!important;padding:0!important;box-sizing:border-box!important}
+
+
+/* Portada v2 · más limpia, moderna y con identidad Fulano */
+.hero-integrated{background:linear-gradient(135deg,#f7f1e5 0%,#fbf8f1 58%,#eee1c9 100%);border-bottom:1px solid rgba(44,39,31,.12)}
+.hero-integrated .hero-copy{max-width:660px;padding-top:clamp(36px,6vw,82px);padding-bottom:clamp(42px,7vw,92px)}
+.hero-integrated .hero-tagline{display:inline-flex;align-items:center;gap:10px;margin-bottom:15px;padding:7px 11px;border:1px solid rgba(44,39,31,.18);background:rgba(255,255,255,.45)}
+.hero-integrated .hero-tagline span{font-size:.68rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.hero-integrated .hero-tagline strong{font-family:'Fraunces',Georgia,serif;font-size:.82rem;font-weight:700}
+.hero-integrated .hero-copy h1{max-width:640px;font-size:clamp(2.7rem,5.4vw,5.7rem);line-height:.91;letter-spacing:-.045em}
+.hero-integrated .hero-copy h1 em{color:var(--terracotta);font-style:italic}
+.hero-integrated .hero-copy>p{max-width:590px;margin-top:20px;font-size:clamp(.98rem,1.4vw,1.14rem);line-height:1.62;color:rgba(44,39,31,.78)}
+.hero-integrated .hero-actions{margin-top:25px;gap:10px}
+.hero-integrated .hero-actions button{min-height:48px}
+.hero-integrated .hero-trust-strip{margin-top:30px;padding-top:18px;border-top:1px solid rgba(44,39,31,.15)}
+.hero-integrated .hero-trust-strip span{padding-right:20px}
+.hero-integrated .hero-trust-strip b{font-size:.78rem}
+.hero-integrated .hero-trust-strip small{font-size:.68rem;opacity:.68}
+.hero-integrated .hero-image{filter:drop-shadow(0 18px 30px rgba(44,39,31,.09))}
+.newspaper-desk{border-top:0}
+.category-card-clean,.world-card,.trust-grid>div{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.category-card-clean:hover,.world-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(44,39,31,.09);border-color:rgba(44,39,31,.28)}
+.help-feature{padding-top:clamp(40px,6vw,80px);padding-bottom:clamp(40px,6vw,80px)}
+.contact-strip-final{margin-top:clamp(30px,5vw,70px)}
+@media(max-width:900px){
+.hero-integrated .hero-copy{padding:30px 18px 36px}
+.hero-integrated .hero-copy h1{font-size:clamp(2.5rem,12vw,4rem);line-height:.94}
+.hero-integrated .hero-copy>p{font-size:.94rem}
+.hero-integrated .hero-actions{display:grid;grid-template-columns:1fr}
+.hero-integrated .hero-actions button{width:100%;justify-content:center}
+.hero-integrated .hero-trust-strip{display:grid;grid-template-columns:1fr;gap:9px}
+.hero-integrated .hero-trust-strip span{padding:0}
+}
