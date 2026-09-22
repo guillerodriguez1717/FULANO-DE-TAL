@@ -2539,3 +2539,36 @@ object-position:42% bottom!important;
 .mini-fulano-helper .fulano-art{width:80px;height:80px}
 .order-fulano-corner{width:108px;opacity:.72}
 }
+
+
+/* FIX: una regla global responsive anterior forzaba .fulano-art a 95px y pisaba las escenas */
+.mini-fulano-helper .fulano-art{
+display:block!important;
+position:absolute!important;
+left:8px!important;
+right:auto!important;
+bottom:0!important;
+width:86px!important;
+height:86px!important;
+max-width:none!important;
+max-height:none!important;
+opacity:1!important;
+visibility:visible!important;
+margin:0!important;
+z-index:3!important
+}
+.order-fulano-corner .fulano-art{
+display:block!important;
+position:static!important;
+width:160px!important;
+height:auto!important;
+max-width:none!important;
+max-height:none!important;
+opacity:1!important;
+visibility:visible!important;
+margin:0!important
+}
+@media(max-width:900px){
+.mini-fulano-helper .fulano-art{width:80px!important;height:80px!important}
+.order-fulano-corner .fulano-art{width:108px!important}
+}
