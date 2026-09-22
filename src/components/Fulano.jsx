@@ -13,7 +13,7 @@ export default function Fulano({ scene = 'hello', className = '' }) {
     hello: <path d="M108 116c14-8 24-18 29-32M137 84l7 7M137 84l-1-10"/>,
   }
   return (
-    <svg className={`fulano-art ${className}`} viewBox="0 0 160 160" role="img" aria-label="Fulano dando una mano">
+    <svg className={`fulano-art ${className}`} width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Fulano dando una mano" style={{ display: 'block', visibility: 'visible', opacity: 1, overflow: 'visible' }}>
       <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <path fill="#53624b" d="M43 56c1-30 58-31 65 0-18-6-46-6-65 0Z"/><path d="M49 53c9-8 45-10 57 0" stroke="#394337" strokeWidth="5"/>
         <path fill="var(--linen)" d="M48 54c-3 29 7 53 30 54 25 1 35-23 28-54"/>
