@@ -2636,7 +2636,7 @@ margin:0!important
 /* Mini Fulano v4: fondo directo, independiente de reglas globales de <img> */
 .mini-fulano-helper .mini-fulano-photo{
   display:block!important;
-  background-image:url('file_00000000da08820ea26b112407de4c25.png')!important;
+  background-image:url('ChatGPT Image 22 sept 2026, 13_19_07.png')!important;
   background-repeat:no-repeat!important;
   background-size:230% auto!important;
   background-position:18% 100%!important;
@@ -2644,7 +2644,7 @@ margin:0!important
 }
 .mini-fulano-helper .mini-fulano-photo img{display:none!important}
 .order-real-fulano{
-  background-image:url('file_00000000da08820ea26b112407de4c25.png')!important;
+  background-image:url('ChatGPT Image 22 sept 2026, 13_19_07.png')!important;
   background-repeat:no-repeat!important;
   background-size:230% auto!important;
   background-position:18% 100%!important;
@@ -2674,4 +2674,24 @@ margin:0!important
 @media(max-width:600px){
  .contextual-heading .mini-fulano-helper{min-height:135px!important;padding:20px 18px 20px 135px!important}
  .contextual-heading .mini-fulano-photo{width:125px!important;height:145px!important}
+}
+
+
+/* Primera ilustración aprobada: mostrar SOLO el PNG de Fulano con metro */
+.contextual-heading .mini-fulano-photo{
+  width:220px!important;height:220px!important;left:-8px!important;bottom:-8px!important;
+  background-image:url('ChatGPT Image 22 sept 2026, 13_19_07.png')!important;
+  background-size:contain!important;background-position:center bottom!important;background-repeat:no-repeat!important;
+  background-color:transparent!important;
+}
+.contextual-heading .mini-fulano-helper{
+  min-height:205px!important;padding-left:220px!important;overflow:visible!important;
+}
+/* Las otras escenas quedan sin esta imagen hasta tener sus PNG propios */
+.mini-search .mini-fulano-photo{display:none!important}
+.mini-search{padding-left:24px!important}
+.order-real-fulano{display:none!important}
+@media(max-width:600px){
+ .contextual-heading .mini-fulano-photo{width:145px!important;height:145px!important;left:-4px!important;bottom:-4px!important}
+ .contextual-heading .mini-fulano-helper{min-height:145px!important;padding-left:145px!important}
 }
