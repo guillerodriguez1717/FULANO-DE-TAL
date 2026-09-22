@@ -2502,3 +2502,25 @@ object-position:42% bottom!important;
 .hero-integrated .hero-trust-strip{display:grid;grid-template-columns:1fr;gap:9px}
 .hero-integrated .hero-trust-strip span{padding:0}
 }
+
+
+/* Fulano contextual · pequeños ayudantes integrados */
+.contextual-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}
+.contextual-heading>div:first-child{max-width:720px}
+.contextual-section-title{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:28px}
+.contextual-section-title .section-title{margin-bottom:0}
+.mini-fulano-helper{display:flex;align-items:center;gap:10px;flex:0 0 auto;padding:9px 12px 9px 7px;background:#f5eddd;border:1px solid rgba(44,39,31,.16);border-radius:999px;box-shadow:0 6px 18px rgba(44,39,31,.05)}
+.mini-fulano-helper .fulano-art{width:62px;height:62px;flex:0 0 62px;margin:-14px 0 -8px;color:var(--charcoal)}
+.mini-fulano-helper span{display:grid;gap:2px;max-width:180px}
+.mini-fulano-helper b{font-family:'Fraunces',Georgia,serif;font-size:.78rem}
+.mini-fulano-helper small{font-size:.65rem;line-height:1.25;opacity:.7}
+.mini-search{margin-bottom:4px}
+.order-section{position:relative;overflow:hidden}
+.order-fulano-corner{position:absolute;right:clamp(18px,4vw,60px);bottom:-17px;width:112px;opacity:.88;pointer-events:none}
+.order-fulano-corner .fulano-art{width:100%;height:auto;color:#f1e8d5}
+@media(max-width:900px){
+.contextual-heading{align-items:flex-start;flex-direction:column;gap:14px}
+.contextual-section-title{grid-template-columns:1fr;gap:14px}
+.mini-fulano-helper{align-self:flex-start}
+.order-fulano-corner{width:82px;right:8px;bottom:-10px;opacity:.35}
+}
