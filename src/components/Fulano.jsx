@@ -13,14 +13,14 @@ export default function Fulano({ scene = 'hello', className = '' }) {
     hello: <path d="M108 116c14-8 24-18 29-32M137 84l7 7M137 84l-1-10"/>,
   }
   return (
-    <svg className={`fulano-art ${className}`} viewBox="0 0 160 160" role="img" aria-label="Ilustración provisoria de Fulano ayudando">
+    <svg className={`fulano-art ${className}`} viewBox="0 0 160 160" role="img" aria-label="Fulano dando una mano">
       <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path fill="var(--mustard)" d="M43 56c1-30 58-31 65 0-18-6-46-6-65 0Z"/>
+        <path fill="#53624b" d="M43 56c1-30 58-31 65 0-18-6-46-6-65 0Z"/><path d="M49 53c9-8 45-10 57 0" stroke="#394337" strokeWidth="5"/>
         <path fill="var(--linen)" d="M48 54c-3 29 7 53 30 54 25 1 35-23 28-54"/>
         <path d="M58 70c4-3 9-3 13 0M86 70c4-3 9-3 13 0"/>
         <path d="M76 73c-2 7-3 12 2 13"/>
         <path strokeWidth="5" d="M58 87c8-9 14-4 20 2 6-6 13-11 22-2M62 89c3 10 11 13 16 2 6 11 15 7 19-2"/>
-        <path fill="var(--terracotta)" d="M44 144c-1-27 10-39 34-39 25 0 37 12 37 39"/>
+        <path fill="#8f5d42" d="M44 144c-1-27 10-39 34-39 25 0 37 12 37 39"/>
         <path d="M57 108v36M99 108v36M53 109h10M94 109h10"/>
         {extras[scene] || extras.hello}
       </g>
