@@ -2631,3 +2631,23 @@ margin:0!important
  .order-real-fulano{width:105px!important;height:105px!important}
  .order-real-fulano img{width:230px!important;height:230px!important}
 }
+
+
+/* Mini Fulano v4: fondo directo, independiente de reglas globales de <img> */
+.mini-fulano-helper .mini-fulano-photo{
+  display:block!important;
+  background-image:url('file_00000000da08820ea26b112407de4c25.png')!important;
+  background-repeat:no-repeat!important;
+  background-size:230% auto!important;
+  background-position:18% 100%!important;
+  background-color:#ead9ba!important;
+}
+.mini-fulano-helper .mini-fulano-photo img{display:none!important}
+.order-real-fulano{
+  background-image:url('file_00000000da08820ea26b112407de4c25.png')!important;
+  background-repeat:no-repeat!important;
+  background-size:230% auto!important;
+  background-position:18% 100%!important;
+  background-color:#ead9ba!important;
+}
+.order-real-fulano img{display:none!important}
