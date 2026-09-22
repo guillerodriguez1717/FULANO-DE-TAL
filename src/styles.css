@@ -2572,3 +2572,41 @@ margin:0!important
 .mini-fulano-helper .fulano-art{width:80px!important;height:80px!important}
 .order-fulano-corner .fulano-art{width:108px!important}
 }
+
+
+/* Fix render Mini Fulano · evita reglas globales que colapsaban el SVG */
+.mini-fulano-helper svg.fulano-art,
+.order-fulano-corner svg.fulano-art,
+.fulano-help svg.fulano-art{
+  display:block!important;
+  visibility:visible!important;
+  position:absolute!important;
+  opacity:1!important;
+  transform:none!important;
+  overflow:visible!important;
+}
+.mini-fulano-helper svg.fulano-art{
+  left:8px!important;
+  bottom:0!important;
+  width:86px!important;
+  height:86px!important;
+}
+.order-fulano-corner svg.fulano-art{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  width:160px!important;
+  height:160px!important;
+}
+.mini-fulano-helper svg.fulano-art path,
+.mini-fulano-helper svg.fulano-art rect,
+.mini-fulano-helper svg.fulano-art circle,
+.order-fulano-corner svg.fulano-art path,
+.order-fulano-corner svg.fulano-art rect,
+.order-fulano-corner svg.fulano-art circle{
+  visibility:visible!important;
+}
+@media(max-width:900px){
+  .mini-fulano-helper svg.fulano-art{width:80px!important;height:80px!important}
+  .order-fulano-corner svg.fulano-art{width:108px!important;height:108px!important}
+}
