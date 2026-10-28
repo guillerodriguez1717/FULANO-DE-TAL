@@ -1,8 +1,8 @@
-import { Menu, Search, ShoppingCart, X } from 'lucide-react'
+import { Menu, Search, X } from 'lucide-react'
 import { useState } from 'react'
 import Logo from './Logo'
 
-export default function Header({ navigate, onSearch, cartCount = 0 }) {
+export default function Header({ navigate, onSearch }) {
   const [menu, setMenu] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
@@ -18,13 +18,13 @@ export default function Header({ navigate, onSearch, cartCount = 0 }) {
       <button className="mobile-brand-button" onClick={() => navigate('home')} aria-label="Ir al inicio">Fulano de Tal</button>
       <Logo onClick={() => navigate('home')}/>
       <nav className={menu ? 'open' : ''} aria-label="Navegación principal">
-        <button onClick={() => goTo('worlds')}>Productos</button>
-        <button onClick={() => goTo('how')}>Cómo comprar</button>
+        <button onClick={() => goTo('worlds')}>Líneas comerciales</button>
+        <button onClick={() => goTo('how')}>Cómo consultar</button>
         <button onClick={() => goTo('about')}>Nosotros</button>
         <button className="mobile-close" onClick={() => setMenu(false)} aria-label="Cerrar menú"><X/></button>
       </nav>
       <div className="header-actions">
-        <button className="search-button" aria-label="Buscar productos" onClick={() => setSearchOpen(v => !v)}><Search/><span>Buscar</span></button><button className="cart-button" onClick={() => navigate('cart')} aria-label={`El changuito de Fulano, ${cartCount} productos`}><ShoppingCart/><span>Changuito</span>{cartCount>0&&<b>{cartCount}</b>}</button>
+        <button className="search-button" aria-label="Buscar en el catálogo" onClick={() => setSearchOpen(v => !v)}><Search/><span>Buscar</span></button>
         <button className="whatsapp" onClick={() => navigate('contact')}>Hablemos</button>
         <button className="menu-button" onClick={() => setMenu(true)} aria-label="Abrir menú"><Menu/><span>Menú</span></button>
       </div>

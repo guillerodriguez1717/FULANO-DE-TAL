@@ -17,7 +17,7 @@ export default function FulanoHelp({
       <button className="primary help-contact" onClick={onContact}>
         <MessageCircle size={18}/> Hablar con Fulano <ArrowRight size={17}/>
       </button>
-      <small>Consultas sobre muebles, medidas, pedidos especiales, tiempos y entrega.</small>
+      <small>Consultas sobre cualquiera de las cuatro líneas de Fulano.</small>
     </div>
   </aside>
 }

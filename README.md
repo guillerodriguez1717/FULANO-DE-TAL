@@ -1,6 +1,8 @@
 # Fulano de Tal
 
-Prototipo funcional y responsive de la tienda online de muebles y productos para el hogar.
+Vista previa responsive de Fulano de Tal con cuatro líneas comerciales: Muebles, Deco y Bazar como línea principal; Perfumería; Cotillón y Descartables; y Textiles por encargo.
+
+La vista previa no contiene productos reales ni procesa pagos. Fulano recibe y asesora las consultas. Los productos de Río Shop Deco son vendidos, cobrados y facturados por Río Shop Deco.
 
 ## Ver el sitio
 
@@ -21,9 +23,10 @@ npm run preview
 
 ## Estructura
 
-- `src/App.jsx`: páginas y recorridos principales del prototipo.
+- `src/App.jsx`: portada, navegación con rutas hash, páginas de líneas y consultas.
+- `src/config/contact.js`: número provisional de WhatsApp y formato de los mensajes.
 - `src/components/`: navegación, tarjetas de producto y componentes reutilizables de Fulano.
-- `src/data/products.js`: catálogo ficticio de demostración, centralizado y reemplazable.
+- `src/data/products.js`: líneas, categorías futuras, plantilla de producto y catálogo vacío.
 - `src/styles.css`: sistema visual responsive, paleta y tipografías.
 - `vendor/`: runtime mínimo local utilizado para que el prototipo no dependa de instalaciones externas.
 - `scripts/`: construcción y validación del sitio estático.
@@ -31,7 +34,9 @@ npm run preview
 
 ## Configuración
 
-El número para las consultas se configura en la constante `WHATSAPP_NUMBER` de `src/App.jsx`, con código de país y solo dígitos.
+El número provisional de WhatsApp se configura en `src/config/contact.js`. Los enlaces abren una conversación con el mensaje contextual ya preparado; el visitante puede editarlo en WhatsApp y enviarlo manualmente. El sitio no registra ni da seguimiento automático a las consultas.
+
+Las referencias `FT-<código de línea>-<código de producto>` son una propuesta de formato manual, no un número de caso ni un sistema de seguimiento. La plantilla de `productTemplate` permite incorporar después código público, disponibilidad confirmada, precio y demás datos de catálogo sin publicar productos en borrador.
 
 ### Reemplazar las ilustraciones de Fulano
 

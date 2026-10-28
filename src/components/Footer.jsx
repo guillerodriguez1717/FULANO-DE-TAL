@@ -4,12 +4,12 @@ export default function Footer({ navigate }) {
   return <footer>
     <div>
       <Logo onClick={() => navigate('home')}/>
-      <p>Fulano de Tal · Muebles y algo más. Pispeá tranquilo; si necesitás una mano, acá estamos.</p>
+      <p>Fulano de Tal · Muebles, Deco y Bazar como línea principal, Perfumería, Cotillón y Descartables, y Textiles por encargo. Consultas claras y atención personal.</p>
     </div>
     <div>
       <strong>Recorré</strong>
-      <button onClick={() => navigate('catalog')}>Productos</button>
-      <button onClick={() => navigate('how')}>Cómo comprar</button>
+      <button onClick={() => navigate('worlds')}>Líneas comerciales</button>
+      <button onClick={() => navigate('how')}>Cómo consultar</button>
       <button onClick={() => navigate('about')}>Nosotros</button>
     </div>
     <div>
